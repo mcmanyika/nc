@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}On-line Shop{% endblock %}</title>
+   <link href="{% static 'css/dump.css' %}" rel="stylesheet">
+<link href="{% static 'b3/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/dump.css' %}" rel="stylesheet">
+    <style type="text/css">
+    	body {
+    		font-size: 12px;
+    	}
+    	.footer_b {
+		   position: fixed;
+		   right: 0;
+		   bottom: 20px;
+		   padding: 10px;
+		   width: 100%;
+		   background-color: #5AC8FA;
+		   color: white;
+		   text-align: center;
+		   border-radius: 4px;
+		}
+		
+    </style>
+</head>
+<body>
+
+	<div class="container">
+	     
+		{% block content %}
+
+
+		{% endblock %}
+	</div>
+
+
+
+
+<script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+
+</body>
+</html>

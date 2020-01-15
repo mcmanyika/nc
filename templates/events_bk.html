@@ -1,0 +1,47 @@
+
+	<!-- Events
+	================================================== -->
+	<div id="section-events" class="wrapper" style="background-color: #f5f5f5">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+					<h2 class="heading">Upcoming Events</h2>
+				</div>  <!-- end column -->
+			</div>  <!-- end row -->
+
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+					<ul class="timeline">
+						{% for rw in events %}
+						<li class="timeline-date">
+							<div class="date">{{rw.timestamp | date:"d"}}</div>
+							<div class="month">{{rw.timestamp | date:'F'}}</div>
+						</li>
+						<li class="timeline-{{rw.timeline}}">
+							<div class="circle"></div>
+							<div class="tl-panel">
+								<div class="tl-heading" style="text-transform: capitalize;">{{rw.name}}</div>
+								<div class="tl-body">
+									<p style="text-transform: capitalize;">{{rw.description}}</p>
+									<div class="time"><i class="fa fa-clock-o"></i> {{rw.start_time}} - {{rw.end_time}}</div>
+									<div class="location" style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> {{rw.address}}, {{rw.city}}</div>
+								</div>
+
+							</div>
+							<div class="date-title" style="text-transform: uppercase;">{{rw.start_time }} </div>
+						</li>
+						{% endfor %}
+					</ul>
+
+					<p class="section-more timeline-more"><a href="events.html" class="btn btn-default"><i class="fa fa-2x fa-plus visible-xs-inline visible-sm-inline"></i><span class="visible-md-inline visible-lg-inline">More Events</span></a></p>
+					<div style="padding-top: 150px">
+						&nbsp;
+					</div>
+				</div>  <!-- end column -->
+			</div>  <!-- end row -->
+
+		</div> <!-- end container -->
+	</div>  <!-- end section-events -->

@@ -1,0 +1,110 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chamisa Now !! Official Site</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="{% static 'css/dump.css' %}" media="screen">
+	<link rel="stylesheet" href="{% static 'assets/css/imports.css' %}" media="screen">
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" media="screen">
+	<link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css' %}" media="screen">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+	<![endif]-->
+	
+
+</head>
+
+<body class="home">
+	{% include 'menubar.html' %}
+    {% block breadcramp %}
+    <div class="container" style="color: #edede; font-size: 13px; padding: 100px 10px  0">
+        <a href="{% url 'base' %}">Home <<</a>
+    </div>
+    {% endblock %}
+
+	<!-- Blockquote at Top
+	================================================== -->
+
+	<div id="section-top-content" class="wrapper">
+		<div class="container">
+			<div class="row">
+
+				{% block content %}
+
+				{% endblock %}
+			</div> <!-- end row -->
+		</div> <!-- end container -->
+	</div> <!-- end section-blockquote -->
+
+
+	
+	<!-- Footer
+	================================================== -->
+	{% include 'footerbar.html' %}
+
+	<script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'assets/js/custom.js' %}"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<script>
+function openArticle() {
+  document.getElementById("add_article").style.height = "100%";
+}
+
+function closeArticle() {
+  document.getElementById("add_article").style.height = "0%";
+}
+
+function openVideo() {
+  document.getElementById("add_video").style.height = "100%";
+}
+
+function closeVideo() {
+  document.getElementById("add_video").style.height = "0%";
+}
+function openEvent() {
+  document.getElementById("add_event").style.height = "100%";
+}
+
+function closeEvent() {
+  document.getElementById("add_event").style.height = "0%";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "mobile/mobile_base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block container%}
+
+  <div data-page="projects" class="page no-toolbar no-navbar" style="background-color: #10131b; ">
+    <div class="row">
+      <div class="page_content_men" style="width: 90%">
+       <nav class="main-nav">
+        <ul>
+          <!-- <li><a href=""><img src="{% static 'mobile/images/icons/white/home.png'%}" alt="" title="" /><span>Home</span></a></li> -->
+
+          {% if request.user.is_authenticated %}
+          <li><a href="{% url 'profile' %}" class="external"><img src="{% static 'mobile/images/icons/white/toogle.png'%}" alt="" title="" /><span>My Profile</span></a></li>
+          <li><a href="{% url 'payments' %}"  class="external"><img src="{% static 'mobile/images/icons/white/heart.png'%}" alt="" title="" /><span>Offering Statement</span></a></li>
+          {% else %}
+          {% endif %}
+          <li><a href="{% url 'about' %}"><img src="{% static 'mobile/images/icons/white/team.png'%}" alt="" title="" /><span>About</span></a></li>
+          <li><a href=""><img src="{% static 'mobile/images/icons/white/photos.png'%}" alt="" title="" /><span>Quotes</span></a></li>
+
+          <!-- <li><a href="" class="external"><img src="{% static 'mobile/images/icons/white/video.png'%}" alt="" title="" /><span>Videos</span></a></li>
+           -->
+          <li><a href="{% url 'partnership' %}"><img src="{% static 'mobile/images/icons/white/support.png'%}" alt="" title="" /><span>Payments</span></a></li>
+          <li><a href="" class="external"><img src="{% static 'mobile/images/icons/white/briefcase.png'%}" alt="" title="" /><span>Store</span></a></li>
+          <li><a href="" class="external"><img src="{% static 'mobile/images/icons/white/slider.png'%}" alt="" title="" /><span>Branches</span></a></li>
+
+          <!-- <li><a href="" class="external"><img src="{% static 'mobile/images/icons/white/docs.png'%}" alt="" title="" /><span>Devotions</span></a></li> -->
+          
+          <li><a href="" class="external"><img src="{% static 'mobile/images/icons/white/blog.png'%}" alt="" title="" /><span>Events</span></a></li>
+    
+      <li><a href="contact.html"><img src="{% static 'mobile/images/icons/white/contact.png'%}" alt="" title="" /><span>Contact</span></a></li>
+        </ul>
+      </nav>  
+      <div class="close_popup_button"><a href="#" class="backbutton"><img src="{% static 'mobile/images/icons/white/menu_close.png'%}" alt="" title="" /></a></div>
+     </div> 
+  </div>
+</div>   
+{% endblock %}

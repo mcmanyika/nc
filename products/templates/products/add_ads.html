@@ -1,0 +1,41 @@
+{% extends "w3base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="w3-row">
+        <div class="w3-col m12">
+            <h5>Upload your Advert</h5>
+                <form  method="post" name="form"  action="" enctype="multipart/form-data">{% csrf_token %}
+                    <div style="padding: 5px">
+                	   <input type="text" name="name" class="form-control" value="" placeholder="product name">
+                    </div>
+                    <div style="padding: 5px">
+                	   <input type="text" name="price" class="form-control" value="" placeholder="price">
+                    </div>   
+                    <div style="padding: 5px">
+                        <textarea  name="description" rows="8" class="form-control" placeholder="Write description"></textarea>
+                    </div>
+                    <div style="padding: 5px">
+                        <select name="tracker" class="form-control">
+                            <option value="Other">Choose Category</option>
+                            {% for rw in categories %}
+                                <option value="{{rw.id}}">{{rw.name}}</option>
+
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div style="padding: 5px">   
+                	   {{form.img}}
+                    </div>
+                	<input type="hidden" name="user" class="form-control" value="{{ request.user.id }}">
+                    <div style="padding: 5px">
+                        <button type="submit" class="btn btn-info btn-lg">Upload Advert</button>
+                    </div>
+                    <div style="height: 50px">   
+                       &nbsp;
+                    </div>
+              </form>
+        </div>
+    </div>
+{% endblock %}

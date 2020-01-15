@@ -1,0 +1,47 @@
+{% extends "mobile/mobile_base_blank.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block container%}
+	<div class="col-md-12">
+      <form  method="POST" name="user_infor" id="user_infor"  action="" enctype="multipart/form-data">{% csrf_token %}
+		<div class="col-md-12 contactform">
+	        <select name="gender" class="form_select">
+	          <option selected>Choose gender</option>
+	          {% for rw in d %}
+	            {% if rw.category == 'gender' %}
+	            <option value="{{rw.name}}">{{rw.name}}</option>
+	            {% endif %}
+	          {% endfor %}
+	        </select>
+	      </div>
+	 	<div class="col-md-12 contactform">
+            <select name="zone" class="input form_select">
+              <option selected>Choose zone</option>
+              {% for rw in d %}
+                {% if rw.category == 'zone' %}
+                <option value="{{rw.name}}">{{rw.name}}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div> 
+		 <div class="col-md-12 contactform">
+            <select name="member_status" class="form_select">
+                  <option selected>Choose member status</option>
+              {% for rw in d %}
+                {% if rw.category == 'member_status' %}
+                  <option value="{{rw.name}}">{{rw.name}}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div> 
+		 <div class="col-md-12 contactform">	
+		    <h5> Please upload your photo below</h5>
+		    {{user_infor.avatar|as_crispy_field:"bootstrap"}}
+		    <input type="hidden" name="rootid" value="{{user.id}}">
+		    <input type="hidden" name="access_level" value="1"><br />
+			<button type="submit" class="btn btn-sm btn-info">Save information</button>
+		</div>	
+	</form>
+    </div>      
+         
+{% endblock %}

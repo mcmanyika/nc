@@ -1,0 +1,27 @@
+{% extends "mobile/mobile_base.html" %}
+{% load staticfiles %}
+{% block container%}
+  <div data-page="projects" class="page no-toolbar no-navbar"  style="background-color: #10131b; ">
+    <div class="row">
+      <div class="page_content_men">
+        <nav class="main-nav">
+        <div class="content-block-login">
+          <div class="loginform">
+        <h4>REGISTER</h4>
+        <form id="LoginForm" method="post">{% csrf_token %}
+              <input type="text" name="username" value="" class="form_input required" placeholder="Username" />
+              <input type="text" name="first_name" value="" class="form_input required" placeholder="First name" />
+              <input type="text" name="last_name" value="" class="form_input required" placeholder="Last name" />
+              <input type="text" name="Email" value="" class="form_input required" placeholder="email" />
+              <input type="password" name="password1" value="" class="form_input required" placeholder="Password" />
+              <input type="password" name="password2" value="" class="form_input required" placeholder="Repeat Password" />
+              <input type="submit" name="submit" class="form_submit" id="submit" value="SIGN UP" />
+            </form>
+          </div>
+        </div>
+      </nav>  
+      <div class="close_popup_button"><a href="#" class="backbutton"><img src="{% static 'mobile/images/icons/white/menu_close.png'%}" alt="" title="" /></a></div>
+     </div> 
+  </div>
+</div>   
+{% endblock %}

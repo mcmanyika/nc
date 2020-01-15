@@ -1,0 +1,19 @@
+{% extends "mobile/mobile_base_blank.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block container%}
+<div class="content-block-login">
+            <div class="loginform">
+            <form id="LoginForm" method="post">{% csrf_token %}
+	            <input type="text" name="username" value="" class="form_input required" placeholder="Username" />
+	            <input type="text" name="first_name" value="" class="form_input required" placeholder="First name" />
+	            <input type="text" name="last_name" value="" class="form_input required" placeholder="Last name" />
+	            <input type="text" name="Email" value="" class="form_input required" placeholder="email" />
+	            <input type="password" name="password1" value="" class="form_input required" placeholder="Password" />
+	            <input type="password" name="password2" value="" class="form_input required" placeholder="Repeat Password" />
+	            <input type="submit" name="submit" class="form_submit" id="submit" value="SIGN UP" />
+            </form>
+      </div>
+</div>
+
+{% endblock %}

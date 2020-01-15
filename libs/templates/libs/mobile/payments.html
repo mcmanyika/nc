@@ -1,0 +1,57 @@
+{% extends "mobile/mobile_base_blank.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block container %}
+  <div data-page="projects" class="page no-toolbar no-navbar homepage white">
+    <div class="row">
+      <div class="page_content_menu">
+       <div class="row" style="padding-top: 40px; font-size: 12px">
+               {% if payments %} 
+              <table id="myTable" width="100%" class="table table-stripped table-hover">
+                  <tr class="header">
+                    <th style="width:20%;">Amount</th>
+                    <th style="width:30%;">Purpose</th>
+                    <th style="width:30%;">Date</th>
+                  </tr>
+                  {% for rw in payments %}
+                  <tr>
+                    <td>{{rw.currency}} {{rw.amount}}</td>
+                    <td>{{rw.purpose}}</td>
+                    <td>{{rw.timestamp}}</td>
+                  </tr>
+                  {% endfor %}
+                 
+                  <tr>
+                      <td  colspan="3"><strong>{{total}}</strong></td>
+                  </tr>
+              </table>
+              {% else %}
+              <center> <h4>No contributions made yet</h4></center>
+              {% endif %}
+
+              <div class="col-md-12" style="padding-top: 10px;">
+        <nav>
+            <ul class="pagination">
+              <li>{% if payments.has_previous %}
+                <a href="?{{page_request_var}}={{ payments.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }} {% endif%}">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+                 {% endif %}
+              </li>
+
+              <li><a href="#">{{ payments.number }} of {{ payments.paginator.num_pages }}</a></li>
+
+              <li>{% if payments.has_next %}
+                <a href="?{{page_request_var}}={{ payments.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }} {% endif%}">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+                {% endif %}
+              </li>
+            </ul>
+        </nav>
+      </div>
+      <div class="close_popup_button"><a href="{% url 'home' %}" class="external"><img src="{% static 'mobile/images/icons/white/menu_close.png'%}" alt="" title="" /></a></div>
+     </div> 
+  </div>
+</div>   
+{% endblock %}

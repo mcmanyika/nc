@@ -1,0 +1,348 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Events - Political HTML Template - FrontRunner</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'assets/css/imports.css' %}" media="screen">
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" media="screen">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript">
+		var ajax_url = 'events-ajax.json';
+	</script>
+</head>
+
+<body class="events">
+
+	<div id="header" class="header-nav-top">
+
+		<!-- main navigation -->
+		<div class="header-inner menu-container">
+			<div class="navbar-wrapper">
+				<nav class="navbar navbar-default navbar-fixed-top" id="nav-main">
+					<div class="container-fluid">
+
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a href="index.html" class="navbar-brand"><img src="assets/images/logo-tim.png" alt="Tim for US Congress"></a>
+						</div>
+
+						<div class="collapse navbar-collapse" id="navbar-main">
+							<ul class="nav navbar-nav" id="nav-left">
+								<li class="dropdown show-on-hover">
+									<a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+									<ul class="dropdown-menu">
+										<li><a href="index.html">Home Page</a></li>
+										<li><a href="home-alt.html">Home (alternate)</a></li>
+									</ul>
+								</li>
+								<li class="dropdown show-on-hover">
+									<a href="issues.html" class="dropdown-toggle" data-toggle="dropdown">Issues</a>
+									<ul class="dropdown-menu">
+										<li><a href="issues.html">Issues</a></li>
+										<li><a href="issues-with-images.html">Issues (alternate)</a></li>
+									</ul>
+								</li>
+								<li class="dropdown show-on-hover">
+									<a href="blog.html" class="dropdown-toggle" data-toggle="dropdown">News</a>
+									<ul class="dropdown-menu">
+										<li><a href="blog.html">News</a></li>
+										<li><a href="blog-with-images.html">News (alternate)</a></li>
+										<li><a href="videos.html">Videos</a></li>
+										<li><a href="events.html">Events</a></li>
+									</ul>
+								</li>
+								<li class="dropdown show-on-hover">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="page-about.html">About</a>
+									<ul class="dropdown-menu">
+										<li><a href="page-about.html">About Tim</a></li>
+										<li class="dropdown-submenu show-on-hover">
+											<a href="page-samples.html" class="dropdown-toggle" data-toggle="dropdown">Templates</a>
+											<ul class="dropdown-menu">
+												<li><a href="page-sidebar-left.html">Left Sidebar</a></li>
+												<li><a href="page.html">Right Sidebar</a></li>
+												<li><a href="single.html">Single Article</a></li>
+												<li><a href="single-sidebar-right.html">Article with Sidebar</a></li>
+												<li><a href="search.html">Search Results</a></li>
+												<li><a href="login.html">Sign In</a></li>
+												<li><a href="404.html">Error Page</a></li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu show-on-hover">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Landing Pages</a>
+											<ul class="dropdown-menu">
+												<li><a href="newsletter.html">Newsletter</a></li>
+												<li><a href="donate.html">Donate</a></li>
+											</ul>
+										</li>
+										<li><a href="page-features.html">Features</a></li>
+									</ul>
+								</li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+							<ul class="nav navbar-nav" id="nav-right">
+								<li><a href="donate.html">Donate</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</nav>  <!-- end default nav -->
+			</div>  <!-- end navbar-wrapper -->
+		</div>  <!-- end header-inner -->
+	</div> <!-- end header -->
+
+
+	<!-- Main Content
+	================================================== -->
+	<div class="main-content container">
+		<div class="row">
+
+			<div class="main-section col-md-8">
+
+				<header class="page-header">
+					<h1 class="page-title">Campaign Events</h1>
+				</header>
+
+				<div class="entry-content">
+
+					<ul class="timeline" id="events_list">
+						<li class="end-of-line">
+							<div class="line-fade-out"></div>
+						</li>
+						<li class="timeline-date">
+							<div class="date">24</div>
+							<div class="month">September</div>
+						</li>
+						<li class="timeline-inverted">
+							<div class="circle"></div>
+							<div class="tl-panel">
+								<div class="tl-heading">Guest Appearance on "The View"</div>
+								<div class="tl-body">
+									<p>Appearing as a special guest for the popular talk show, along side other candidates.</p>
+									<div class="time"><i class="fa fa-clock-o"></i> 8:30 AM - 9:00 AM</div>
+									<div class="location"><i class="fa fa-map-marker"></i> 515 E. 51st St, New York NY</div>
+								</div>
+
+							</div>
+							<div class="date-title">8:30 <span>AM</span></div>
+						</li>
+						<li class="timeline-standard">
+							<div class="circle"></div>
+							<div class="tl-panel">
+								<div class="tl-heading">Lunch with Local Media Group</div>
+								<div class="tl-body">
+									<p>Taking questions from the media at Tiki Tacos before a public lunch event.</p>
+									<div class="time"><i class="fa fa-clock-o"></i> 12:00 PM - 1:00 PM</div>
+									<div class="location"><i class="fa fa-map-marker"></i> 26 Salsa Ave, New York NY</div>
+								</div>
+
+							</div>
+							<div class="date-title">12:00 <span>PM</span></div>
+						</li>
+						<li class="timeline-date">
+							<div class="date">5</div>
+							<div class="month">October</div>
+						</li>
+						<li class="timeline-inverted">
+							<div class="circle"></div>
+							<div class="tl-panel">
+								<div class="tl-heading">LSM Community Center Opening</div>
+								<div class="tl-body">
+									<p>Official dedication of the new community center for the "Legaly Sound of Mind" organization.</p>
+									<div class="time"><i class="fa fa-clock-o"></i> 10:00 AM - 11:00 AM</div>
+									<div class="location"><i class="fa fa-map-marker"></i> 123 Fruit Cake Rd, Austin TX</div>
+								</div>
+
+							</div>
+							<div class="date-title">10:00 <span>AM</span></div>
+						</li>
+						<li class="timeline-standard">
+							<div class="circle"></div>
+							<div class="tl-panel">
+								<div class="tl-heading">Elk Club Donors Dinner</div>
+								<div class="tl-body">
+									<p>Enjoy lunch with the future senator with the famous Elk Club at their historic lodge.</p>
+									<div class="time"><i class="fa fa-clock-o"></i> 6:30 PM - 10:00 PM</div>
+									<div class="location"><i class="fa fa-map-marker"></i> 123 Political Station, Austin TX</div>
+								</div>
+
+							</div>
+							<div class="date-title">6:30 <span>PM</span></div>
+						</li>
+					</ul>
+
+					<!-- Paging -->
+					<!-- <div class="paging clearfix">
+						<ul class="pagination">
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li class="next-post"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+						</ul>
+					</div> -->
+
+					<!-- Ajax Load -->
+					<p class="more-events timeline-more">
+						<button class="btn btn-default" id="more_events" data-paged="1" data-max="4" data-count="4">
+							<i class="fa fa-2x fa-plus visible-xs-inline visible-sm-inline"></i><span class="visible-md-inline visible-lg-inline">More Events</span>
+						</button>
+					</p>
+
+
+
+				</div> <!-- end entry-content -->
+			</div> <!-- end main-section -->
+
+			<div class="col-md-3 col-md-offset-1">
+				<div class="sidebar-container">
+
+					<aside class="widget">
+						<h3 class="heading">RECENT EVENTS</h3>
+
+						<div class="widget-events">
+							<div class="event-entry">
+								<h5 class="event-title"><a href="#">South-End Brewery Event</a></h5>
+								<p class="event-date">March 6, 2015 at 8:30 AM</p>
+								<p class="event-content">It was a great day for everyone at the brewery. Thanks to all that attended and supported Tim!</p>
+								<div class="event-gallery">
+									<a href="#">
+										<img src="assets/images/event-12.jpg" alt="">
+										<img src="assets/images/event-2.jpg" alt="">
+										<img src="assets/images/event-3.jpg" alt="">
+										<img src="assets/images/event-4.jpg" alt="">
+										<img src="assets/images/event-11.jpg" alt="">
+										<img src="assets/images/event-10.jpg" alt="">
+									</a>
+								</div>
+								<a href="" class="small">Event Details</a>
+							</div>
+
+							<div class="event-entry">
+								<h5 class="event-title"><a href="#">Another Past Event in Recent Events</a></h5>
+								<p class="event-date">March 6, 2015 at 8:30 AM</p>
+								<p class="event-content">It was a great day for everyone at the brewery. Thanks to all that attended and supported Tim!</p>
+								<div class="event-gallery">
+									<a href="#">
+										<img src="assets/images/event-9.jpg" alt="">
+										<img src="assets/images/event-8.jpg" alt="">
+										<img src="assets/images/event-7.jpg" alt="">
+									</a>
+								</div>
+								<a href="" class="small">Event Details</a>
+							</div>
+
+							<div class="event-entry">
+								<h5 class="event-title"><a href="#">One More Event that Already Happened</a></h5>
+								<p class="event-date">March 6, 2015 at 8:30 AM</p>
+								<p class="event-content">It was a great day for everyone at the brewery. Thanks to all that attended and supported Tim!</p>
+								<div class="event-gallery">
+									<a href="#">
+										<img src="assets/images/event-1.jpg" alt="">
+										<img src="assets/images/event-6.jpg" alt="">
+										<img src="assets/images/event-5.jpg" alt="">
+									</a>
+								</div>
+								<a href="" class="small">Event Details</a>
+							</div>
+						</div>
+					</aside>
+
+				</div> <!-- end sidebar -->
+			</div> <!-- end column -->
+
+		</div> <!-- end container -->
+	</div> <!-- end main-content -->
+
+
+	<!-- Footer
+	================================================== -->
+	<footer id="footer" class="wrapper with-overlap">
+
+		<div class="container-box">
+			<div class="container">
+				<div class="container-box-wrapper accent-box">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-wrapper">
+								<form class="form-inline">
+									<h3>GET INVOLVED!</h3>
+									<div class="form-group">
+										<label class="sr-only" for="email">Email address</label>
+										<input id="email" class="field-full-width" name="email" type="email" value="" required="required" placeholder="Email">
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="email">ZIP</label>
+										<input id="zip" class="field-half-width" name="text" type="text" value="" required="required" placeholder="ZIP">
+									</div>
+									<button type="submit" class="btn btn-default">Update Me</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- end get-involved -->
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<ul class="footer-social icon-blocks">
+						<li><a href="https://www.facebook.com/pages/Parallelus/197911100259679"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/parallelus"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://www.youtube.com/user/parallelusinc/"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+
+					<p><img src="assets/images/logo-tim-alt.png" width="76" height="32" alt="Tim for US Congress"></p>
+
+					<div class="footer-nav">
+						<ul>
+							<li><a href="page-about.html">About Tim</a></li>
+							<li><a href="issues.html">On the Issues</a></li>
+							<li><a href="blog.html">News</a></li>
+							<li><a href="events.html">Events</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="donate.html"><strong class="text-danger">Donate</strong></a></li>
+						</ul>
+					</div>
+
+					<div class="paid-for">
+						<p class="no-margin">PAID FOR BY TIM 2016</p>
+					</div>
+
+					<div class="copyright">
+						<p>&copy; TIM 2016, <a href="http://para.llel.us" rel="nofollow" target="_blank">Parallelus, Inc</a>.<br>P.O.BOX 9777, Riverside, CA 92515</p>
+					</div>
+
+					<p class="small text-muted no-margin">Created by <a href="http://para.llel.us" rel="nofollow" target="_blank">Parallelus</a> and available for purchase on <a href="http://para.llel.us/+/tf-portfolio" rel="nofollow" target="_blank">ThemeForest</a>.</p>
+
+				</div>
+
+			</div>
+
+		</div>
+	</footer>
+
+
+	<script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+	<script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+</body>
+</html>
+

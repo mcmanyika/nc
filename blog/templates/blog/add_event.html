@@ -1,0 +1,58 @@
+{% extends "blog/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<style type="text/css">
+	div {
+		padding: 3px
+	}
+</style>
+<div class="col-md-12">
+	<div class="col-md-12">
+	<h3> Add Upcoming Event</h3>
+</div>
+	<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+		<div class="col-md-6">
+			<input type="text" name="name" class="form-control" value=""  placeholder="Event Name">
+		</div>
+		<div class="col-md-12">
+			<input type="text" name="description" class="form-control" value=""  placeholder="Brief description">
+		</div>
+		<div class="col-md-6">
+			<label> <strong>Category</strong></label>
+			<select name="category" class="form-control">
+				<option value="Policy"> Policy </option>
+			</select>
+		</div>
+		<div class="col-md-6">
+			<label><strong>Date</strong></label>
+			<input type="date" name="date" class="form-control" value="">
+		</div>
+		<div class="col-md-6"><label><strong>Start Time</strong></label>
+			<input type="time" name="start_time" class="form-control" value="">
+		</div>
+		<div class="col-md-6"><label><strong>Finish Time</strong></label>
+			<input type="time" name="end_time" class="form-control" value="">
+		</div>
+		<div class="col-md-6">
+			<input type="text" name="address" class="form-control" value=""  placeholder="Address">
+		</div>
+		<div class="col-md-6">
+			<input type="text" name="city" class="form-control" value=""  placeholder="Enter City">
+		</div>
+
+		<div class="col-md-6">
+			{{form.timeline}}
+		</div>
+		<div class="col-md-6">
+			<input type="text" name="status" class="form-control" value=""  placeholder="Active">
+		</div>
+
+		<div class="col-md-12">
+		<input type="submit" name="submit"  class="form-control btn btn-info" value="Upload Event">
+		<input type="hidden" name="user" class="form-control"  value="{{user.id}}">
+		</div>
+	</form>
+</div>
+
+{% endblock %}
