@@ -8,7 +8,7 @@ from django.db import connection
 from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, get_object_or_404, render_to_response, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render, HttpResponseRedirect, Http404
