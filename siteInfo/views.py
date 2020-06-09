@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render, get_object_or_404, render_to_response, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db import connection
 from django.db.models import Q
 from django.contrib import auth
