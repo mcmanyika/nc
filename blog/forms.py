@@ -2,7 +2,7 @@ from django import forms
 from django.core.files.images import get_image_dimensions
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from joins.models import UserProfile
+# from joins.models import UserProfile
 from siteInfo.models import *
 from django import *
 from django.contrib.auth import authenticate, get_user_model, login, logout
@@ -18,7 +18,7 @@ class SubscribeForm(forms.ModelForm):
         fields = [
             'email',
             'mobile',
-            ]
+        ]
 
 
 class NewsForm(forms.ModelForm):
@@ -30,7 +30,7 @@ class NewsForm(forms.ModelForm):
             'category',
             'img',
             'user',
-            ]            
+        ]
 
 
 class VideoForm(forms.ModelForm):
@@ -41,7 +41,7 @@ class VideoForm(forms.ModelForm):
             'thumbnail',
             'url',
             'user',
-            ]  
+        ]
 
 
 class EventForm(forms.ModelForm):
@@ -57,6 +57,6 @@ class EventForm(forms.ModelForm):
             'address',
             'city',
             'timeline',
-            'status', 
+            'status',
             'user',
-            ]  
+        ]

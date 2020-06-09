@@ -9,8 +9,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render, HttpResponseRedirect, Http404
-from .forms import EmailForm, JoinForm, JoinForm2, UserRegisterForm
-from .models import Join
+# from .forms import EmailForm, JoinForm, JoinForm2, UserRegisterForm
+# from .models import Join
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.db.models import Count
@@ -30,6 +30,7 @@ from libs.models import *
 
 # Create your views here.
 
+
 def dictfetchall(cursor):
     "Return all rows from a cursor as a dict"
     columns = [col[0] for col in cursor.description]
@@ -37,6 +38,7 @@ def dictfetchall(cursor):
         dict(zip(columns, row))
         for row in cursor.fetchall()
     ]
+
 
 def register_view(request):
     dictionary = t_dictionary.objects.all().order_by('order')
@@ -55,30 +57,30 @@ def register_view(request):
                 return HttpResponseRedirect('/dash/')
             else:
                 messages.success(request, "Enter correct username or password")
- 
+
     if request.method == 'POST':
         passchange = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
             passchange_user = user.save()
             update_session_auth_hash(request, user)
-            messages.success(request, _('Your password was successfully updated!'))
+            messages.success(request, _(
+                'Your password was successfully updated!'))
             return redirect('change_password')
         else:
             messages.error(request, _('Please correct the error below.'))
     else:
-        passchange = PasswordChangeForm(request.user)            
-
-      
+        passchange = PasswordChangeForm(request.user)
 
     context = {
-        "dictionary" : dictionary,
-        "form" : form,
-        "form2" : form2,
-        "passchange" : passchange,
-        
+        "dictionary": dictionary,
+        "form": form,
+        "form2": form2,
+        "passchange": passchange,
+
 
     }
     return render(request, "signin.html", context)
+
 
 def register(request):
     instance = get_object_or_404(t_dictionary, category='title')
@@ -96,9 +98,10 @@ def register(request):
 
     context = {
         "form": form,
-        "image" : instance.image,
-        }    
-    return render(request, 'register.html', context)   
+        "image": instance.image,
+    }
+    return render(request, 'register.html', context)
+
 
 def logout(request):
     logout(request)
@@ -119,6 +122,7 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
+
 def user_img(request):
     headings = t_dictionary.objects.all().order_by('id')
     rw = t_dictionary.objects.all().order_by("name")
@@ -130,16 +134,18 @@ def user_img(request):
         return redirect('signup-confirmation')
 
     context = {
-        "headings" : headings,
-        "rw" : rw,
-        "img_form" : img_form,
-    }    
+        "headings": headings,
+        "rw": rw,
+        "img_form": img_form,
+    }
     template = 'user_img.html'
     return render(request, template, context)
 
+
 def signup_confirmation(request):
-    
+
     return render(request, 'signup_confirmation.html')
+
 
 def change_password(request):
     if request.method == 'POST':
@@ -147,7 +153,8 @@ def change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            messages.success(request, _('Your password was successfully updated!'))
+            messages.success(request, _(
+                'Your password was successfully updated!'))
             return redirect('change_password')
         else:
             messages.error(request, _('Please correct the error below.'))
@@ -155,10 +162,4 @@ def change_password(request):
         form = PasswordChangeForm(request.user)
     return render(request, 'change_password.html', {
         'form': form
-}) 
-
-
-
-
-
-
+    })
