@@ -25,7 +25,7 @@ SECRET_KEY = 'xf)kpm507f9-p82(a+anzbvagb89g(5q#r-7wyoo0a6bknab0c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [167.99.12.126]
 
 
 # Application definition
@@ -84,10 +84,22 @@ WSGI_APPLICATION = 'chamisa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else: 
+    DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bigboy',
+        'USER': 'site_admin',
+        'PASSWORD': 'focus@1',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
