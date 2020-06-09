@@ -9,8 +9,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render, HttpResponseRedirect, Http404
-# from .forms import EmailForm, JoinForm, JoinForm2, UserRegisterForm
-# from .models import Join
+from .forms import EmailForm, JoinForm, JoinForm2, UserRegisterForm
+from .models import Join
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.db.models import Count
@@ -163,3 +163,4 @@ def change_password(request):
     return render(request, 'change_password.html', {
         'form': form
     })
+

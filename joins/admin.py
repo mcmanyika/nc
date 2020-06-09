@@ -5,14 +5,14 @@ from .models import *
 
 # Register your models here.
 
-# class JoinModelAdmin(admin.ModelAdmin):
-#     list_display = ['email', 'ref_id', 'timestamp']
+class JoinModelAdmin(admin.ModelAdmin):
+    list_display = ['email', 'ref_id', 'timestamp']
 
-#     class Meta:
-#         model = Join
+    class Meta:
+        model = Join
 
 
-# admin.site.register(Join, JoinModelAdmin)
+admin.site.register(Join, JoinModelAdmin)
 
 
 class EmailModelAdmin(admin.ModelAdmin):
@@ -25,11 +25,15 @@ class EmailModelAdmin(admin.ModelAdmin):
 admin.site.register(Email, EmailModelAdmin)
 
 
-# class AcctModelAdmin(admin.ModelAdmin):
-# 	list_display = ['id','marital_status', 'zone',  'timestamp']
-# 	class Meta:
-# 		model = t_acct
-# admin.site.register(t_acct, AcctModelAdmin)
+class AcctModelAdmin(admin.ModelAdmin):
+    list_display = ['id', 'marital_status', 'zone',  'timestamp']
+
+    class Meta:
+        model = t_acct
+
+
+admin.site.register(t_acct, AcctModelAdmin)
+
 
 class AttriModelAdmin(admin.ModelAdmin):
     list_display = ['id', 'department', 'level', 'status', 'timestamp']
@@ -61,11 +65,11 @@ class GroupAdmin(admin.ModelAdmin):
 admin.site.register(t_group, GroupAdmin)
 
 
-# class UserPicAdmin(admin.ModelAdmin):
-#     list_display = ['id', ]
+class UserPicAdmin(admin.ModelAdmin):
+    list_display = ['id', ]
 
-#     class Meta:
-#         model = UserProfile
+    class Meta:
+        model = UserProfile
 
 
-# admin.site.register(UserProfile, UserPicAdmin)
+admin.site.register(UserProfile, UserPicAdmin)
