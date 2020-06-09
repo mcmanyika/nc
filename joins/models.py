@@ -4,12 +4,14 @@ from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFill
 from django.db import models
 from django.contrib.auth.models import User
-from django.urls import reverse    
-from django import forms           
+from django.urls import reverse
+from django import forms
 
 # Create your models here.
+
+
 def upload_location(instance, filename):
-    return "%s/%s" %(instance.id, filename)
+    return "%s/%s" % (instance.id, filename)
 
 
 class UserProfile(models.Model):
@@ -17,12 +19,16 @@ class UserProfile(models.Model):
     rootid = models.IntegerField()
     title = models.CharField(max_length=10, null=True, blank=True)
     gender = models.CharField(max_length=10, null=True, blank=True)
-    dob = models.DateField(default='2000-01-01', null=True, blank=True)
-    marital_status = models.CharField(default='', max_length=20, null=True, blank=True)
+    dob = models.DateField(null=True, blank=True)
+    marital_status = models.CharField(
+        default='', max_length=20, null=True, blank=True)
     phone = models.CharField(max_length=25, default='', null=True, blank=True)
-    member_status = models.CharField(max_length=20, default='Student', null=True, blank=True)
-    program = models.CharField(max_length=30, default='Diploma in Theology', null=True, blank=True)
-    program_type = models.CharField(max_length=30, default='Diploma', null=True, blank=True)
+    member_status = models.CharField(
+        max_length=20, default='Student', null=True, blank=True)
+    program = models.CharField(
+        max_length=30, default='Diploma in Theology', null=True, blank=True)
+    program_type = models.CharField(
+        max_length=30, default='Diploma', null=True, blank=True)
     sponser = models.CharField(max_length=10, null=True, blank=True)
 
     country_of_birth = models.CharField(max_length=30, null=True, blank=True)
@@ -30,22 +36,25 @@ class UserProfile(models.Model):
     passport = models.CharField(max_length=10, null=True, blank=True)
     licence = models.CharField(max_length=10, null=True, blank=True)
 
-    baptised = models.CharField(max_length=30, default='Yes', null=True, blank=True)
-    church = models.CharField(max_length=150, default='Heartfelt International Ministries', null=True, blank=True)
-    how_you_know_us = models.CharField(max_length=120, default='Not Applicable', null=True, blank=True)
+    baptised = models.CharField(
+        max_length=30, default='Yes', null=True, blank=True)
+    church = models.CharField(
+        max_length=150, default='Heartfelt International Ministries', null=True, blank=True)
+    how_you_know_us = models.CharField(
+        max_length=120, default='Not Applicable', null=True, blank=True)
     access_level = models.IntegerField(default=1, null=True, blank=True)
     avatar = models.ImageField(null=True, blank=True)
     image_thumbnail = ImageSpecField(source='avatar',
-        processors=[ResizeToFill(350, 200)],
-        format='JPEG',
-        options={'quality': 60})
+                                     processors=[ResizeToFill(350, 200)],
+                                     format='JPEG',
+                                     options={'quality': 60})
 
     user = models.IntegerField(default=1, null=True, blank=True)
-    timestamp = models.DateTimeField(auto_now_add = True, auto_now=False)
-    updated = models.DateTimeField(auto_now_add = False, auto_now=True)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __unicode__(self):
-        return 'UserProfile {}'.format(self.id) 
+        return 'UserProfile {}'.format(self.id)
 
 
 class Join(models.Model):
@@ -54,8 +63,8 @@ class Join(models.Model):
     ref_id = models.CharField(max_length=120, default='ABC', unique=True)
     position = models.CharField(max_length=50, default='')
     image = models.FileField(upload_to=upload_location, null=True, blank=True)
-    timestamp = models.DateTimeField(auto_now_add = True, auto_now=False)
-    updated = models.DateTimeField(auto_now_add = False, auto_now=True)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __unicode__(self):
         return self.email
@@ -68,6 +77,7 @@ class Join(models.Model):
 
     class Meta:
         unique_together = ("email", "ref_id",)
+
 
 class Email(models.Model):
     email = models.EmailField(unique=True)
@@ -84,7 +94,7 @@ class t_acct(models.Model):
     )
     rootid = models.ForeignKey(User, on_delete=models.CASCADE)
     gender = models.CharField(max_length=10, choices=g, null=True, blank=True)
-    dob = models.DateField(default='2019-01-01', null=True, blank=True)
+    dob = models.DateField(null=True, blank=True)
     marital_status = models.CharField(default='', max_length=20)
     image = models.FileField(upload_to=upload_location, null=True, blank=True)
     phone = models.CharField(max_length=25, default='', null=True, blank=True)
@@ -106,7 +116,7 @@ class t_user_attribute(models.Model):
     op = (
          ('Yes', 'Yes'),
          ('No', 'No')
-        )
+    )
     root = models.ForeignKey(User, on_delete=models.CASCADE)
     department = models.CharField(max_length=20)
     level = models.CharField(max_length=20)
@@ -115,7 +125,8 @@ class t_user_attribute(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __unicode__(self):
-        return 't_user_attribute {}'.format(self.id) 
+        return 't_user_attribute {}'.format(self.id)
+
 
 class t_group(models.Model):
     rootid = models.IntegerField()
@@ -127,14 +138,13 @@ class t_group(models.Model):
 
     def __unicode__(self):
         return 't_group {}'.format(self.id)
-        
 
-class t_children(models.Model): 
+
+class t_children(models.Model):
     rootid = models.IntegerField()
     childid = models.IntegerField()
     relationship = models.CharField(max_length=20)
 
     def __unicode__(self):
         return self.relationship
-
 
