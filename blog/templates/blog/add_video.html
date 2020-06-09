@@ -1,32 +1,52 @@
-{% extends "blog/base.html" %}
-{% load staticfiles %}
-
-{% block content %}
+{% extends "blog/base.html" %} {% load static %} {% block content %}
 <style type="text/css">
-	div {
-		padding-top: 20px
-	}
+  div {
+    padding-top: 20px;
+  }
 </style>
 <div class="col-md-12">
-	<h2>Add video below</h2>
-	<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
-		<div class="col-md-12">
-			<input type="text" name="title" class="form-control" value=""  placeholder="Video Title">
-		</div>
-		<div class="col-md-12">
-		<label id="thumbnail">
-			<strong>Preview Image</strong>
-			<input type="file" name="thumbnail" class="form-control">
-		</label>
-		</div>
-		<div class="col-md-12">
-			<input type="text" name="url" class="form-control" value=""  placeholder="Youtube Address">
-		</div>
-		<div class="col-md-12">
-			<input type="submit" name="submit"  class="form-control btn btn-info" value="Upload Video">
-		<input type="hidden" name="user" class="form-control"  value="{{user.id}}"><br />
-		</div>
-	</form>
+  <h2>Add video below</h2>
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col-md-12">
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        value=""
+        placeholder="Video Title"
+      />
+    </div>
+    <div class="col-md-12">
+      <label id="thumbnail">
+        <strong>Preview Image</strong>
+        <input type="file" name="thumbnail" class="form-control" />
+      </label>
+    </div>
+    <div class="col-md-12">
+      <input
+        type="text"
+        name="url"
+        class="form-control"
+        value=""
+        placeholder="Youtube Address"
+      />
+    </div>
+    <div class="col-md-12">
+      <input
+        type="submit"
+        name="submit"
+        class="form-control btn btn-info"
+        value="Upload Video"
+      />
+      <input
+        type="hidden"
+        name="user"
+        class="form-control"
+        value="{{user.id}}"
+      /><br />
+    </div>
+  </form>
 </div>
 
 {% endblock %}

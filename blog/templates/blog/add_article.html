@@ -1,25 +1,46 @@
-{% extends "blog/base.html" %}
-{% load staticfiles %}
-
-{% block content %}
+{% extends "blog/base.html" %} {% load static %} {% block content %}
 <div class="col-md-12">
-	<h3> Add article below</h3>
-	<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
-		<input type="text" name="header" class="form-control" value=""  placeholder="Heading"><br />
-		<textarea name="description" class="form-control" rows="7" cols="30" placeholder="Description"></textarea><br />
-		
-		<select name="category" class="form-control">
-			{% for rw in dictionary %}
-			<option value="{{rw.name}}">{{rw.name}}</option>
-			{% endfor %}
-		</select>
-		<br />
-		<strong>Preview Image</strong>
-			<input type="file" name="img" class="form-control">
-		<br />
-		<input type="submit" name="submit"  class="form-control btn btn-info" value="Upload Article">
-		<input type="hidden" name="user" class="form-control"  value="{{user.id}}"><br />
-	</form>
+  <h3>Add article below</h3>
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input
+      type="text"
+      name="header"
+      class="form-control"
+      value=""
+      placeholder="Heading"
+    /><br />
+    <textarea
+      name="description"
+      class="form-control"
+      rows="7"
+      cols="30"
+      placeholder="Description"
+    ></textarea
+    ><br />
+
+    <select name="category" class="form-control">
+      {% for rw in dictionary %}
+      <option value="{{rw.name}}">{{rw.name}}</option>
+      {% endfor %}
+    </select>
+    <br />
+    <strong>Preview Image</strong>
+    <input type="file" name="img" class="form-control" />
+    <br />
+    <input
+      type="submit"
+      name="submit"
+      class="form-control btn btn-info"
+      value="Upload Article"
+    />
+    <input
+      type="hidden"
+      name="user"
+      class="form-control"
+      value="{{user.id}}"
+    /><br />
+  </form>
 </div>
 
 {% endblock %}

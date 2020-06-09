@@ -1,22 +1,23 @@
-{% extends "mainBase.html" %}
-{% load staticfiles %}
-{% block content %}
-	<header class="page-header">
-		<h1 class="page-title">{{header}}</h1>
-		<div class="header-meta">
-			<span class="posted-on">{{date}}</span>
-		</div>
-	</header>
+{% extends "mainBase.html" %} {% load static %} {% block content %}
+<header class="page-header">
+  <h1 class="page-title">{{header}}</h1>
+  <div class="header-meta">
+    <span class="posted-on">{{date}}</span>
+  </div>
+</header>
 
-	<div class="entry-content">
+<div class="entry-content">
+  <p class="entry-thumbnail">
+    <img
+      src="{% static 'img/' %}{{image}}"
+      alt="featured image"
+      class="img-responsive"
+      style="width: 420px;"
+    />
+  </p>
 
-		<p class="entry-thumbnail">
-			<img src="{% static 'img/' %}{{image}}" alt="featured image" class="img-responsive" style="width: 420px">
-		</p>
-
-		<p>
-			{{description}}
-		</p>
-
-	</div>
+  <p>
+    {{description}}
+  </p>
+</div>
 {% endblock %}

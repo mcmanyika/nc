@@ -1,11 +1,11 @@
-{% load staticfiles %}
+{% load static %}
 
-	<div class="top-bar grid" style="background-color: #ba1c24">
-	  <p class="hide-on-mobile">
-	   JOIN PRESIDENT NELSON CHAMISA, FOR THE FUTURE WE WANT!  </p>
-	     <a href="{% url 'donate' %}" style="text-transform: uppercase;">
-    DONATE NOW!  </a>
-	</div>
-{% block breadcramp %}
-
-{% endblock %}
+<div class="top-bar grid" style="background-color: #ba1c24;">
+  <p class="hide-on-mobile">
+    JOIN PRESIDENT NELSON CHAMISA, FOR THE FUTURE WE WANT!
+  </p>
+  <a href="{% url 'donate' %}" style="text-transform: uppercase;">
+    DONATE NOW!
+  </a>
+</div>
+{% block breadcramp %} {% endblock %}

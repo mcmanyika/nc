@@ -1,141 +1,153 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="default">
-		<meta name="theme-color" content="#f44336">
-		<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
-		<title>Daily Commodity Prices</title>
-		<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet"> -->
-		<link rel="stylesheet" href="{% static 'css/w3.css' %}">
-		<link rel="stylesheet" href="{% static 'css/app.css' %}">
-		<link rel="stylesheet" href="{% static 'css/icons.css' %}">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="apple-touch-icon" href="img/f7-icon-square.png">
-		<link rel="icon" href="img/f7-icon.png">
-		<style type="text/css">
-			.prices {
-				background-color: #151515; 
-				color: #4e5159;
-				padding: 5px;
-				border-color: #313131; 
-				border-style: solid; 
-				border-width: 0 1px 0 0px;
-				font-size: 12px;
-			}
-			.commodity {
-				background-color: #2a2a2a; 
-				color: #d4d4d4;
-				padding: 6px;
-				border-color: #313131; 
-				border-style: solid; 
-				border-width: 0 0 1px 0px;
-				font-size: 10px;
-			}
-			.commodity:hover {
-				background-color: #323232; 
-				color: #d4d4d4;
-				padding: 6px;
-				border-color: #313131; 
-				border-style: solid; 
-				border-width: 0 0 1px 0px;
-				font-size: 10px;
-			}
-			.headlines {
-				background-color: #000; 
-				color: #4e5159;
-				padding: 5px;
-				border-color: #313131; 
-				border-style: solid; 
-				border-width: 0 1px 0 0px;
-				font-size: 12px;
-			}
-			.up {
-				color: #2adf6a;
-			}
-			.down {
-				color: #fd2837;
-			}
-/*Full screen overlay*/
-			.overlay {
-			  height: 83%;
-			  width: 0;
-			  position: fixed;
-			  z-index: 1;
-			  bottom: 0;
-			  right: 0;
-			  background-color: rgb(0,0,0);
-			  background-color: rgba(0,0,0, 0.9);
-			  overflow-x: hidden;
-			  transition: 0.5s;
-			}
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="theme-color" content="#f44336" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:"
+    />
+    <title>Daily Commodity Prices</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/icons.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="apple-touch-icon" href="img/f7-icon-square.png" />
+    <link rel="icon" href="img/f7-icon.png" />
+    <style type="text/css">
+      .prices {
+        background-color: #151515;
+        color: #4e5159;
+        padding: 5px;
+        border-color: #313131;
+        border-style: solid;
+        border-width: 0 1px 0 0px;
+        font-size: 12px;
+      }
+      .commodity {
+        background-color: #2a2a2a;
+        color: #d4d4d4;
+        padding: 6px;
+        border-color: #313131;
+        border-style: solid;
+        border-width: 0 0 1px 0px;
+        font-size: 10px;
+      }
+      .commodity:hover {
+        background-color: #323232;
+        color: #d4d4d4;
+        padding: 6px;
+        border-color: #313131;
+        border-style: solid;
+        border-width: 0 0 1px 0px;
+        font-size: 10px;
+      }
+      .headlines {
+        background-color: #000;
+        color: #4e5159;
+        padding: 5px;
+        border-color: #313131;
+        border-style: solid;
+        border-width: 0 1px 0 0px;
+        font-size: 12px;
+      }
+      .up {
+        color: #2adf6a;
+      }
+      .down {
+        color: #fd2837;
+      }
+      /*Full screen overlay*/
+      .overlay {
+        height: 83%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+      }
 
-			.overlay-content {
-			  position: relative;
-			  top: 25%;
-			  width: 100%;
-			  text-align: center;
-			  margin-top: 30px;
-			}
+      .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+      }
 
-			.overlay a {
-			  padding: 8px;
-			  text-decoration: none;
-			  font-size: 36px;
-			  color: #818181;
-			  display: block;
-			  transition: 0.3s;
-			}
+      .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
 
-			.overlay a:hover, .overlay a:focus {
-			  color: #f1f1f1;
-			}
+      .overlay a:hover,
+      .overlay a:focus {
+        color: #f1f1f1;
+      }
 
-			.overlay .closebtn {
-			  position: absolute;
-			  top: 20px;
-			  right: 45px;
-			  font-size: 60px;
-			}
+      .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+      }
 
-			@media screen and (max-height: 450px) {
-			  .overlay a {font-size: 20px}
-			  .overlay .closebtn {
-			  font-size: 40px;
-			  top: 15px;
-			  right: 35px;
-			  }
-			}
-	</style>
-	</head>
-	<body>
-		<div class="w3-row">
-			<img src="{% static 'img/logo.png' %}">
-		</div>	
-		<div class="w3-row">
-			<img src="{% static 'img/2.png' %}">	
-		</div>
-			{% block content %}
+      @media screen and (max-height: 450px) {
+        .overlay a {
+          font-size: 20px;
+        }
+        .overlay .closebtn {
+          font-size: 40px;
+          top: 15px;
+          right: 35px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w3-row">
+      <img src="{% static 'img/logo.png' %}" />
+    </div>
+    <div class="w3-row">
+      <img src="{% static 'img/2.png' %}" />
+    </div>
+    {% block content %} {% endblock content %}
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <div class="overlay-content" style="color: #fff;">
+        {{name}}
+      </div>
+    </div>
 
-			{% endblock content %}
-	<div id="myNav" class="overlay">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <div class="overlay-content" style="color: #fff">
-	    {{name}}
-	  </div>
-	</div>
-			
-	<script>
-		function openNav() {
-		  document.getElementById("myNav").style.width = "100%";
-		}
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
 
-		function closeNav() {
-		  document.getElementById("myNav").style.width = "0%";
-		}
-		</script>
-	</body>
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
+    </script>
+  </body>
 </html>

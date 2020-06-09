@@ -1,16 +1,33 @@
-{% extends "mobile/mobile_base_blank.html" %}
-{% load staticfiles %}
-{% load crispy_forms_tags %}
-{% block container %}
-  <div data-page="projects" class="page no-toolbar no-navbar homepage white">
-    <div class="row">
-      <div class="page_content_menu">
-       <div class="row" style="padding-top: 40px">
-          <div class="col-md-6"><a href="{% url 'profile' %}" class="external btn btn-info btn-lg btn_"><h4>Profile</h4></a></div>
-          <div class="col-md-6"><a href="{% url 'payments' %}" class="external btn btn-info btn-lg btn_"><h4>Payments</h4></a></div>
-          </div>
-      <div class="close_popup_button"><a href="{% url 'home' %}" class="external"><img src="{% static 'mobile/images/icons/white/menu_close.png'%}" alt="" title="" /></a></div>
-     </div> 
+{% extends "mobile/mobile_base_blank.html" %} {% load static %} {% load
+crispy_forms_tags %} {% block container %}
+<div data-page="projects" class="page no-toolbar no-navbar homepage white">
+  <div class="row">
+    <div class="page_content_menu">
+      <div class="row" style="padding-top: 40px;">
+        <div class="col-md-6">
+          <a
+            href="{% url 'profile' %}"
+            class="external btn btn-info btn-lg btn_"
+            ><h4>Profile</h4></a
+          >
+        </div>
+        <div class="col-md-6">
+          <a
+            href="{% url 'payments' %}"
+            class="external btn btn-info btn-lg btn_"
+            ><h4>Payments</h4></a
+          >
+        </div>
+      </div>
+      <div class="close_popup_button">
+        <a href="{% url 'home' %}" class="external"
+          ><img
+            src="{% static 'mobile/images/icons/white/menu_close.png'%}"
+            alt=""
+            title=""
+        /></a>
+      </div>
+    </div>
   </div>
-</div>   
+</div>
 {% endblock %}

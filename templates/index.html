@@ -1,403 +1,498 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Nelson Chamisa Official Site</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nelson Chamisa Official Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="{% static 'assets/css/imports.css' %}" media="screen">
-	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" media="screen">
-	<link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css' %}" media="screen">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	<style>
-		.navbar-default {
-		    background-color: 
-		    #afafb39e;
-		    border-color: #141433;
-		}
-		.navbar-default .navbar-nav > li > a {
-    color: 
-    #ba1c24;
-}
-#header.header-nav-top {
-    margin-top: 4px;
-}
-.header-bg-wrapper .logo-container .logo {
-    width: 600px;
-    height: 280px;
-    background: #d7d7d900;
-}
-.main-content, .wrapper {
-    padding-top: 5x;
-}
-.icon-bar {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/imports.css' %}"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/bootstrap.min.css' %}"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/owl-carousel.css' %}"
+      media="screen"
+    />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .navbar-default {
+        background-color: #afafb39e;
+        border-color: #141433;
+      }
+      .navbar-default .navbar-nav > li > a {
+        color: #ba1c24;
+      }
+      #header.header-nav-top {
+        margin-top: 4px;
+      }
+      .header-bg-wrapper .logo-container .logo {
+        width: 600px;
+        height: 280px;
+        background: #d7d7d900;
+      }
+      .main-content,
+      .wrapper {
+        padding-top: 5x;
+      }
+      .icon-bar {
+        position: fixed;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
 
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 20px;
-}
+      .icon-bar a {
+        display: block;
+        text-align: center;
+        padding: 16px;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 20px;
+      }
 
-h2.heading {
-    font-size: 22px;
-    text-align: center;
-    margin-bottom: 5px;
-}
-#footer.with-overlap .container-box {
-    margin-top: -90px;
-}
-.icon-bar a:hover {
-  background-color: #000;
-}
-.main-content, .wrapper {
-    padding-top: 0px;
-}
-.main-content, .wrapper {
-    padding-top: 1px;
-}
+      h2.heading {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+      #footer.with-overlap .container-box {
+        margin-top: -90px;
+      }
+      .icon-bar a:hover {
+        background-color: #000;
+      }
+      .main-content,
+      .wrapper {
+        padding-top: 0px;
+      }
+      .main-content,
+      .wrapper {
+        padding-top: 1px;
+      }
 
-.facebook {
-  background: #99999d;
-  color: white;
-}
+      .facebook {
+        background: #99999d;
+        color: white;
+      }
 
-.twitter {
-  background: #99999d;
-  color: white;
-}
+      .twitter {
+        background: #99999d;
+        color: white;
+      }
 
-.google {
-  background: #99999d;
-  color: white;
-}
+      .google {
+        background: #99999d;
+        color: white;
+      }
 
-.instagram {
-  background: #99999d;
-  color: white;
-}
+      .instagram {
+        background: #99999d;
+        color: white;
+      }
 
-.youtube {
-  background: #99999d;
-  color: white;
-}
+      .youtube {
+        background: #99999d;
+        color: white;
+      }
 
-.content {
-  margin-left: 75px;
-  font-size: 30px;
-}
+      .content {
+        margin-left: 75px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
 
-	</style>
-</head>
+  <body class="home">
+    <div
+      id="header"
+      class="header-bg header-large header-nav-top offset-bottom"
+      style="
+        background-image: url({% static 'assets/images/header-home.jpg' %};
+      "
+    >
+      <!-- page header -->
+      <div class="header-bg-wrapper">
+        <!-- logo -->
+        <div class="header-inner logo-container">
+          <div class="pull-left" style="padding-left: 150px;">
+            <div class="logo">
+              <a href="index.html">
+                <div class="logo-wrapper" style="padding: 40px;">
+                  <center>
+                    <!-- <h2 style="color: #ba1c24 !important; font-size: 40px; font-weight: 400">A GREAT ZIMBABWE AWAITS US</h2> -->
+                  </center>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
 
-<body class="home">
+        <!-- main navigation (use <li class="active"> to indicate current page) -->
+        {% include 'menubar.html' %}
+      </div>
+      <!-- end header-top -->
+    </div>
+    <!-- / .header-bg -->
 
-	<div id="header" class="header-bg header-large header-nav-top offset-bottom" style="background-image: url({% static 'assets/images/header-home.jpg' %}">
-
-		<!-- page header -->
-		<div class="header-bg-wrapper">
-
-			<!-- logo -->
-			<div class="header-inner logo-container">
-				<div class="pull-left" style="padding-left: 150px">
-					<div class="logo">
-						<a href="index.html">
-							<div class="logo-wrapper" style="padding: 40px;"><center>
-									<!-- <h2 style="color: #ba1c24 !important; font-size: 40px; font-weight: 400">A GREAT ZIMBABWE AWAITS US</h2> -->
-								</center>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<!-- main navigation (use <li class="active"> to indicate current page) -->
-			{% include 'menubar.html' %}
-
-		</div>  <!-- end header-top -->
-	</div>  <!-- / .header-bg -->
-
-
-	<!-- Header Bottom Links
+    <!-- Header Bottom Links
 	================================================== -->
-	<div class="header-links">
-		<div class="container">
-			<div class="header-links-wrapper">
-				<div class="col-md-3 col-xs-6 no-padding">
-					<!-- Modify style with color classes: 'accent', 'solid-accent', 'solid-primary' (default: no extra class) -->
-					<div class="header-links-item solid-accent" style="background-image: none;">
-						<a href="{% url 'donate' %}">
-							<article>
-								<h3 class="entry-title">
-									<span>Contribute</span>
-								</h3>
-							</article>
-							<div class="overlay"></div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 no-padding">
-					<div class="header-links-item" style="background-image: url('{% static 'assets/images/header-bottom-volunteer.png' %}')">
-						<a href="#footer">
-							<article>
-								<h3 class="entry-title">
-									<i class="fa fa-check-square-o"></i>
-									<span>Volunteer</span>
-								</h3>
-							</article>
-							<div class="overlay"></div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 no-padding">
-					<div class="header-links-item" style="background-image: url('{% static 'assets/images/header-bottom-updates.jpg' %}')">
-						<a href="#footer">
-							<article>
-								<h3 class="entry-title">
-									<i class="fa fa-envelope"></i>
-									<span>Email Updates</span>
-								</h3>
-							</article>
-							<div class="overlay"></div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 no-padding">
-					<div class="header-links-item" style="background-image: url('assets/images/header-bottom-news.jpg')">
-						<a href="#section-news">
-							<article>
-								<h3 class="entry-title">
-									<i class="fa fa-newspaper-o"></i>
-									<span>Latest News</span>
-								</h3>
-							</article>
-							<div class="overlay"></div>
-						</a>
-					</div>
-				</div>
-			</div> <!-- end header-links-wrapper -->
-		</div> <!-- end container -->
-	</div> <!-- end header-links -->
+    <div class="header-links">
+      <div class="container">
+        <div class="header-links-wrapper">
+          <div class="col-md-3 col-xs-6 no-padding">
+            <!-- Modify style with color classes: 'accent', 'solid-accent', 'solid-primary' (default: no extra class) -->
+            <div
+              class="header-links-item solid-accent"
+              style="background-image: none;"
+            >
+              <a href="{% url 'donate' %}">
+                <article>
+                  <h3 class="entry-title">
+                    <span>Contribute</span>
+                  </h3>
+                </article>
+                <div class="overlay"></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-6 no-padding">
+            <div
+              class="header-links-item"
+              style="
+                background-image: url('{% static 'assets/images/header-bottom-volunteer.png' %}');
+              "
+            >
+              <a href="#footer">
+                <article>
+                  <h3 class="entry-title">
+                    <i class="fa fa-check-square-o"></i>
+                    <span>Volunteer</span>
+                  </h3>
+                </article>
+                <div class="overlay"></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-6 no-padding">
+            <div
+              class="header-links-item"
+              style="
+                background-image: url('{% static 'assets/images/header-bottom-updates.jpg' %}');
+              "
+            >
+              <a href="#footer">
+                <article>
+                  <h3 class="entry-title">
+                    <i class="fa fa-envelope"></i>
+                    <span>Email Updates</span>
+                  </h3>
+                </article>
+                <div class="overlay"></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-6 no-padding">
+            <div
+              class="header-links-item"
+              style="
+                background-image: url('assets/images/header-bottom-news.jpg');
+              "
+            >
+              <a href="#section-news">
+                <article>
+                  <h3 class="entry-title">
+                    <i class="fa fa-newspaper-o"></i>
+                    <span>Latest News</span>
+                  </h3>
+                </article>
+                <div class="overlay"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- end header-links-wrapper -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end header-links -->
 
-
-	<!-- Blockquote at Top
+    <!-- Blockquote at Top
 	================================================== -->
-	<div id="section-top-content" class="wrapper header-links-overlay">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-					<blockquote class="big-quote" style="margin-top:0;">
-&ldquo;We pledge to create a
-<em>free Zimbabwe </em>in which the citizen does not live in fear and is free to pursue her aspirations. &rdquo;
-</blockquote>
-				</div>
-			</div> <!-- end row -->
-		</div> <!-- end container -->
-	</div> <!-- end section-blockquote -->
+    <div id="section-top-content" class="wrapper header-links-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <blockquote class="big-quote" style="margin-top: 0;">
+              &ldquo;We pledge to create a
+              <em>free Zimbabwe </em>in which the citizen does not live in fear
+              and is free to pursue her aspirations. &rdquo;
+            </blockquote>
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end section-blockquote -->
 
-
-	<!-- Campaign Video
+    <!-- Campaign Video
 	================================================== -->
-	<div id="section-videos" class="wrapper video-list">
+    <div id="section-videos" class="wrapper video-list">
+      <div class="container">
+        <h2 class="heading">Videos</h2>
 
-		<div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="video-wrapper">
+              <div class="close-button">
+                <i class="fa fa-times close-icon"></i>
+              </div>
+              <div id="player_container" class="video-container">
+                {% for rw in videos %}
+                <div class="video-element video-element-{{rw.url}}">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/{{rw.url}}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
 
-			<h2 class="heading">Videos</h2>
+        <div class="row">
+          {% for rw in videos %}
+          <div class="col-md-4 col-sm-6">
+            <!-- Use YouTube Video ID for 'thumb-######' and data-video-index -->
+            <div
+              class="video-thumbnail"
+              id="thumb-{{rw.url}}"
+              data-video-index="{{rw.url}}"
+              style="background-image: url('{% static 'img/' %}{{rw.thumbnail}}');"
+            >
+              <i class="fa fa-play-circle"></i>
+              <div class="overlay"></div>
+            </div>
+          </div>
+          {% endfor %}
 
-			<div class="row">
-				<div class="col-md-12">
+          <div class="col-sm-12">
+            <p class="section-more">
+              <a href="{% url 'videos' %}" class="btn btn-default"
+                >More Campaign Videos</a
+              >
+            </p>
+            <br />
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end section-videos -->
 
-					<div class="video-wrapper">
-						<div class="close-button">
-							<i class="fa fa-times close-icon"></i>
-						</div>
-						<div id="player_container" class="video-container">
-
-						{% for rw in videos %}
-							<div class="video-element video-element-{{rw.url}}">
-
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/{{rw.url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-							{% endfor %}
-
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="row">
-
-				{% for rw in videos %}
-				<div class="col-md-4 col-sm-6">
-					<!-- Use YouTube Video ID for 'thumb-######' and data-video-index -->
-					<div class="video-thumbnail" id="thumb-{{rw.url}}" data-video-index="{{rw.url}}" style="background-image: url('{% static 'img/' %}{{rw.thumbnail}}');">
-						<i class="fa fa-play-circle"></i>
-						<div class="overlay"></div>
-					</div>
-				</div>
-				{% endfor %}
-				
-
-				<div class="col-sm-12">
-					<p class="section-more"><a href="{% url 'videos' %}" class="btn btn-default">More Campaign Videos</a></p><br />
-				</div>
-
-			</div> <!-- end row -->
-		</div> <!-- end container -->
-	</div> <!-- end section-videos -->
-
-
-	<!-- News
+    <!-- News
 	================================================== -->
-	<div id="section-news" class="wrapper">
+    <div id="section-news" class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <h2 class="heading">News &amp; Headlines</h2>
+          </div>
+        </div>
 
-		<div class="container">
+        <div class="row">
+          <div
+            class="news-list col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2"
+          >
+            {% for rw in news %} {% if rw.category == 'featured' %}
+            <article class="post">
+              <header>
+                <div class="header-meta">
+                  <span class="posted-on"
+                    ><strong>Dated</strong> :
+                    {{rw.timestamp|date:"M-d-Y"}}</span
+                  >
+                </div>
+                <h2 class="entry-title">
+                  <a href="{% url 'article-detail' rw.id %}" title="article"
+                    >{{rw.header}}</a
+                  >
+                </h2>
+              </header>
 
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-					<h2 class="heading">News &amp; Headlines</h2>
-				</div>
-			</div>
+              <p>
+                {{rw.description|truncatechars:150 }}
+                <br />
+                <a href="{% url 'article-detail' rw.id %}" class="more-link"
+                  >Continue reading</a
+                >
+              </p>
 
-			<div class="row">
-				<div class="news-list col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-					{% for rw in news %}
-						{% if rw.category == 'featured' %}
-					<article class="post">
-						<header>
-							<div class="header-meta">
-								<span class="posted-on"><strong>Dated</strong> : {{rw.timestamp|date:"M-d-Y"}}</span>
-							</div>
-							<h2 class="entry-title">
-								<a href="{% url 'article-detail' rw.id %}" title="article">{{rw.header}}</a>
-							</h2>
-						</header>
+              <hr class="sep" />
+            </article>
+            {% endif %} {% endfor %}
 
-						<p>
-							{{rw.description|truncatechars:150 }}
-							<br>
-							<a href="{% url 'article-detail' rw.id %}" class="more-link">Continue reading</a>
-						</p>
+            <div style="height: 150px;">&nbsp;</div>
+          </div>
+          <!-- end column -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end section-news -->
 
-						<hr class="sep" />
-					</article>
-						{% endif %}
-					{% endfor %}
-
-					<div style="height: 150px">&nbsp;</div>
-				</div>  <!-- end column -->
-			</div>  <!-- end row -->
-		</div>  <!-- end container -->
-	</div> <!-- end section-news -->
-
-
-	<!-- Events
+    <!-- Events
 	================================================== -->
-	<div id="section-events" class="wrapper" style="background-color: #f5f5f5">
+    <div id="section-events" class="wrapper" style="background-color: #f5f5f5;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <h2 class="heading">Upcoming Events</h2>
+          </div>
+          <!-- end column -->
+        </div>
+        <!-- end row -->
 
-		<div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <ul class="timeline">
+              {% for rw in events %}
+              <li class="timeline-date">
+                <div class="date">{{rw.timestamp | date:"d"}}</div>
+                <div class="month">{{rw.timestamp | date:'F'}}</div>
+              </li>
+              <li class="timeline-{{rw.timeline}}">
+                <div class="circle"></div>
+                <div class="tl-panel">
+                  <div class="tl-heading" style="text-transform: capitalize;">
+                    {{rw.name}}
+                  </div>
+                  <div class="tl-body">
+                    <p style="text-transform: capitalize;">
+                      {{rw.description}}
+                    </p>
+                    <div class="time">
+                      <i class="fa fa-clock-o"></i> {{rw.start_time}} -
+                      {{rw.end_time}}
+                    </div>
+                    <div class="location" style="text-transform: capitalize;">
+                      <i class="fa fa-map-marker"></i> {{rw.address}},
+                      {{rw.city}}
+                    </div>
+                  </div>
+                </div>
+                <div class="date-title" style="text-transform: uppercase;">
+                  {{rw.start_time }}
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
 
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-					<h2 class="heading">Upcoming Events</h2>
-				</div>  <!-- end column -->
-			</div>  <!-- end row -->
+            <p class="section-more timeline-more">
+              <a href="events.html" class="btn btn-default"
+                ><i
+                  class="fa fa-2x fa-plus visible-xs-inline visible-sm-inline"
+                ></i
+                ><span class="visible-md-inline visible-lg-inline"
+                  >More Events</span
+                ></a
+              >
+            </p>
+            <div style="padding-top: 150px;">
+              &nbsp;
+            </div>
+          </div>
+          <!-- end column -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end section-events -->
 
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <div class="icon-bar">
+      <a
+        href="https://www.facebook.com/AdvNelsonChamisa/"
+        target="_blank"
+        class="facebook"
+        ><i class="fa fa-facebook"></i
+      ></a>
+      <a
+        href="https://twitter.com/nelsonchamisa"
+        target="_blank"
+        class="twitter"
+        ><i class="fa fa-twitter"></i
+      ></a>
+      <a
+        href="https://www.instagram.com/nelson_chamisa/"
+        target="_blank"
+        class="instagram"
+        ><i class="fa fa-instagram"></i
+      ></a>
+      <a
+        href="https://www.youtube.com/user/Chinjamaitiro"
+        target="_blank"
+        class="youtube"
+        ><i class="fa fa-youtube"></i
+      ></a>
+    </div>
 
-					<ul class="timeline">
-						{% for rw in events %}
-						<li class="timeline-date">
-							<div class="date">{{rw.timestamp | date:"d"}}</div>
-							<div class="month">{{rw.timestamp | date:'F'}}</div>
-						</li>
-						<li class="timeline-{{rw.timeline}}">
-							<div class="circle"></div>
-							<div class="tl-panel">
-								<div class="tl-heading" style="text-transform: capitalize;">{{rw.name}}</div>
-								<div class="tl-body">
-									<p style="text-transform: capitalize;">{{rw.description}}</p>
-									<div class="time"><i class="fa fa-clock-o"></i> {{rw.start_time}} - {{rw.end_time}}</div>
-									<div class="location" style="text-transform: capitalize;"><i class="fa fa-map-marker"></i> {{rw.address}}, {{rw.city}}</div>
-								</div>
+    {% include 'footerbar.html' %}
 
-							</div>
-							<div class="date-title" style="text-transform: uppercase;">{{rw.start_time }} </div>
-						</li>
-						{% endfor %}
-					</ul>
+    <script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 
-					<p class="section-more timeline-more"><a href="events.html" class="btn btn-default"><i class="fa fa-2x fa-plus visible-xs-inline visible-sm-inline"></i><span class="visible-md-inline visible-lg-inline">More Events</span></a></p>
-					<div style="padding-top: 150px">
-						&nbsp;
-					</div>
-				</div>  <!-- end column -->
-			</div>  <!-- end row -->
+    <script>
+      $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on("click", function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
 
-		</div> <!-- end container -->
-	</div>  <!-- end section-events -->
+            // Store hash
+            var hash = this.hash;
 
-
-
-	<div class="icon-bar">
-	  <a href="https://www.facebook.com/AdvNelsonChamisa/" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
-	  <a href="https://twitter.com/nelsonchamisa" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a> 
-	  <a href="https://www.instagram.com/nelson_chamisa/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a> 
-	  <a href="https://www.youtube.com/user/Chinjamaitiro" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a> 
-	</div>
-
-	{% include 'footerbar.html' %}
-
-
-	<script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
-	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
-	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
-	<script src="{% static 'assets/js/custom.js' %}"></script>
-	<script src="https://www.youtube.com/iframe_api"></script>
-
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
       });
-    } // End if
-  });
-});
-
-</script>
-
-</body>
+    </script>
+  </body>
 </html>
