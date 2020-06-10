@@ -158,5 +158,6 @@ MEDIA_URL = '/img/'
 CORS_ORIGIN_WHITELIST = [
     "https://nelsonchamisa.online",
     "http://167.99.12.126",
-    "http://127.0.0.1:8000"
+    "http://127.0.0.1:8000",
+    "http://localhost"
 ]
