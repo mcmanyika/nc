@@ -23,7 +23,7 @@
 
         <div class="collapse navbar-collapse" id="navbar-main">
           <ul class="nav navbar-nav" id="nav-left">
-            <li><a href="{% url 'base' %}">Home</a></li>
+            <li><a style="cursor: pointer;" onclick="openNav()">&#9776;</a></li>
             <li class="dropdown show-on-hover">
               <a class="dropdown-toggle" data-toggle="dropdown" href=""
                 >About</a
@@ -44,17 +44,11 @@
                 <li><a href="">Make A Call</a></li>
               </ul>
             </li>
-            <li><a href="{% url 'issues' %}">I Will Vote</a></li>
           </ul>
+
           <ul class="nav navbar-nav" id="nav-right">
             <li>
-<<<<<<< HEAD
               <a href="#footer" style="color: #fff !important;">Get Involved</a>
-=======
-              <a href="#footer" style="color: #fff !important;"
-                >Get Involved</a
-              >
->>>>>>> cacae943c01136c74727e4a27767f0bf833d19f6
             </li>
           </ul>
         </div>
