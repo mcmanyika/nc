@@ -24,8 +24,10 @@ SECRET_KEY = 'xf)kpm507f9-p82(a+anzbvagb89g(5q#r-7wyoo0a6bknab0c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ["167.99.12.126"]
+if DEBUG:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = ["167.99.12.126"]
 
 
 # Application definitio
@@ -51,6 +53,7 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -150,3 +153,9 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
 
 MEDIA_URL = '/img/'
+
+CORS_ORIGIN_WHITELIST = [
+
+    "http://localhost:8080",
+    "http://127.0.0.1:8000"
+]

@@ -1,22 +1,18 @@
-
-
-
-	.navbar-default {
-		    background-color: 
-		    #afafb39e !important;
-		    border-color: #141433 !important;
-		}
-		.navbar-default .navbar-nav > li > a {
-    color: 
-    #ba1c24 !important;
+.navbar-default {
+  background-color: #afafb39e !important;
+  border-color: #141433 !important;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ba1c24 !important;
 }
 .header-bg-wrapper .logo-container .logo {
-    width: 600px;
-    height: 280px;
-    background: #d7d7d900 !important;
+  width: 600px;
+  height: 280px;
+  background: #d7d7d900 !important;
 }
-.main-content, .wrapper {
-    padding-top: 5px !important;
+.main-content,
+.wrapper {
+  padding-top: 5px !important;
 }
 .icon-bar {
   position: fixed;
@@ -36,21 +32,23 @@
 }
 
 h2.heading {
-    font-size: 22px;
-    text-align: center;
-    margin-bottom: 5px !important;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 5px !important;
 }
 #footer.with-overlap .container-box {
-    margin-top: -90px !important;
+  margin-top: -90px !important;
 }
 .icon-bar a:hover {
   background-color: #000;
 }
-.main-content, .wrapper {
-    padding-top: 0px;
+.main-content,
+.wrapper {
+  padding-top: 0px;
 }
-.main-content, .wrapper {
-    padding-top: 1px !important;
+.main-content,
+.wrapper {
+  padding-top: 1px !important;
 }
 
 .facebook {
@@ -83,60 +81,116 @@ h2.heading {
   font-size: 30px;
 }
 
-
 /*Full screen overlay*/
-    body {
-        font-family: 'Lato', sans-serif;
-    }
+body {
+  font-family: "Lato", sans-serif;
+}
 
-    .overlay {
-      height: 0%;
-      width: 100%;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #fff;
-      overflow-y: hidden;
-      transition: 0.5s;
-    }
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
 
-    .overlay-content {
-      position: relative;
-      color: #fff;
-      top: 25%;
-      width: 100%;
-      text-align: center;
-      padding: 0 40px;
-    }
+.overlay-content {
+  position: relative;
+  color: #fff;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  padding: 0 40px;
+}
 
-    .overlay a {
-      padding: 8px;
-      text-decoration: none;
-      font-size: 36px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
 
-    .overlay a:hover, .overlay a:focus {
-      color: #f1f1f1;
-    }
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
 
-    .overlay .closebtn {
-      position: absolute;
-      top: 40px;
-      right: 45px;
-      font-size: 60px;
-    }
+.overlay .closebtn {
+  position: absolute;
+  top: 40px;
+  right: 45px;
+  font-size: 60px;
+}
 
-    @media screen and (max-height: 450px) {
-      .overlay {overflow-y: auto;}
-      .overlay a {font-size: 20px}
-      .overlay .closebtn {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-      }
-    }
+@media screen and (max-height: 450px) {
+  .overlay {
+    overflow-y: auto;
+  }
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
 
+.SideBarOverlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  background-color: #1b1c1d;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.SideBarOverlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.SideBarOverlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  /* color: #818181; */
+  display: block;
+  transition: 0.3s;
+}
+
+.SideBarOverlay a:hover,
+.SideBarOverlay a:focus {
+  color: #f1f1f1;
+}
+
+.SideBarOverlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .SideBarOverlay a {
+    font-size: 20px;
+  }
+  .SideBarOverlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
