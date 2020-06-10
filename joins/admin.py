@@ -25,14 +25,6 @@ class EmailModelAdmin(admin.ModelAdmin):
 admin.site.register(Email, EmailModelAdmin)
 
 
-class AcctModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'marital_status', 'zone',  'timestamp']
-
-    class Meta:
-        model = t_acct
-
-
-admin.site.register(t_acct, AcctModelAdmin)
 
 
 class AttriModelAdmin(admin.ModelAdmin):
@@ -45,16 +37,6 @@ class AttriModelAdmin(admin.ModelAdmin):
 admin.site.register(t_user_attribute, AttriModelAdmin)
 
 
-class ChildrenAdmin(admin.ModelAdmin):
-    list_display = ['rootid', 'relationship', ]
-
-    class Meta:
-        model = t_children
-
-
-admin.site.register(t_children, ChildrenAdmin)
-
-
 class GroupAdmin(admin.ModelAdmin):
     list_display = ['id', 'rootid', 'name', 'category']
 
@@ -65,11 +47,4 @@ class GroupAdmin(admin.ModelAdmin):
 admin.site.register(t_group, GroupAdmin)
 
 
-class UserPicAdmin(admin.ModelAdmin):
-    list_display = ['id', ]
 
-    class Meta:
-        model = UserProfile
-
-
-admin.site.register(UserProfile, UserPicAdmin)
