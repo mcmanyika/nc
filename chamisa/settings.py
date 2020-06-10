@@ -27,10 +27,10 @@ DEBUG = True
 if DEBUG:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ["167.99.12.126"]
+    ALLOWED_HOSTS = ['167.99.12.126']
 
 
-# Application definitio
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'blog',
     'cart',
     'joins',
@@ -155,7 +156,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
 MEDIA_URL = '/img/'
 
 CORS_ORIGIN_WHITELIST = [
-
-    "http://localhost:8080",
-    "http://127.0.0.1:8000"
+    "https://nelsonchamisa.online",
+    "http://167.99.12.126",
+    "http://127.0.0.1:8000",
+    "http://localhost"
 ]
