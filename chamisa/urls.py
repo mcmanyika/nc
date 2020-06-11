@@ -23,10 +23,9 @@ urlpatterns = [
     url(r'admin/', admin.site.urls),
 
     url(r'dashboard/', dash, name='dash'),
-    url(r'shop/', include('shop.urls')),
-    url(r'products/', include('products.urls')),
-    url(r'cart/', include('cart.urls')),
-    url(r'orders/', include('orders.urls')),
+
+
+
     url(r'blog/', include('blog.urls')),
     url(r'donate/', donate, name='donate'),
     url(r'libs/', include('libs.urls')),

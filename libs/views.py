@@ -10,7 +10,7 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from django.db.models import Count
 from django.contrib.auth.decorators import login_required
-from products.models import *
+
 from blog.models import *
 from blog.forms import *
 

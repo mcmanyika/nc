@@ -24,7 +24,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.shortcuts import render, redirect
 from django.utils.translation import ugettext as _
-from products.models import *
+
 from siteInfo.models import *
 from libs.models import *
 
