@@ -9,8 +9,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render, HttpResponseRedirect, Http404
-from .forms import EmailForm, JoinForm, JoinForm2, UserRegisterForm
-from .models import Join
+from .forms import EmailForm,  UserRegisterForm
+# from .models import Join
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.db.models import Count
@@ -44,7 +44,6 @@ def register_view(request):
     dictionary = t_dictionary.objects.all().order_by('order')
 
     form = UserRegisterForm(request.POST or None)
-    form2 = JoinForm2(request.POST or None)
 
     if request.method == "POST":
         username = request.POST['username']
@@ -74,7 +73,6 @@ def register_view(request):
     context = {
         "dictionary": dictionary,
         "form": form,
-        "form2": form2,
         "passchange": passchange,
 
 
@@ -163,4 +161,3 @@ def change_password(request):
     return render(request, 'change_password.html', {
         'form': form
     })
-

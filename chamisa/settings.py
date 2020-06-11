@@ -23,8 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'xf)kpm507f9-p82(a+anzbvagb89g(5q#r-7wyoo0a6bknab0c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['localhost', '167.99.12.126',
+DEBUG = True
+ALLOWED_HOSTS = ['127.0.0.1', '167.99.12.126',
                  'www.nelsonchamisa.online', 'nelsonchamisa.online']
 
 
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'blog',
     'cart',
-    # 'joins',
+    'joins',
     'libs',
     'orders',
     'products',

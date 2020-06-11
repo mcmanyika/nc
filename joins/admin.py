@@ -3,18 +3,6 @@ from django.contrib import admin
 from .models import *
 
 
-# Register your models here.
-
-class JoinModelAdmin(admin.ModelAdmin):
-    list_display = ['email', 'ref_id', 'timestamp']
-
-    class Meta:
-        model = Join
-
-
-admin.site.register(Join, JoinModelAdmin)
-
-
 class EmailModelAdmin(admin.ModelAdmin):
     list_display = ['email', 'timestamp']
 
@@ -23,8 +11,6 @@ class EmailModelAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Email, EmailModelAdmin)
-
-
 
 
 class AttriModelAdmin(admin.ModelAdmin):
@@ -45,6 +31,3 @@ class GroupAdmin(admin.ModelAdmin):
 
 
 admin.site.register(t_group, GroupAdmin)
-
-
-

@@ -16,24 +16,10 @@ class EmailForm(forms.Form):
     email = forms.EmailField()
 
 
-class JoinForm(forms.ModelForm):
-    class Meta:
-        model = Join
-        fields = ["email"]
-
-
-class JoinForm2(forms.ModelForm):
-    class Meta:
-        model = Join
-        fields = ["email"]
-
-
 class NewsletterForm(forms.ModelForm):
     class Meta:
         model = Email
         fields = ["email"]
-
-
 
 
 class UserRegisterForm(forms.ModelForm):
@@ -115,4 +101,3 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('username', 'first_name', 'last_name',
                   'email', 'password1', 'password2', )
-

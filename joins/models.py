@@ -14,37 +14,12 @@ def upload_location(instance, filename):
     return "%s/%s" % (instance.id, filename)
 
 
-
-class Join(models.Model):
-    email = models.EmailField()
-    phone = models.CharField(max_length=50, default='00')
-    ref_id = models.CharField(max_length=120, default='ABC', unique=True)
-    position = models.CharField(max_length=50, default='')
-    image = models.FileField(upload_to=upload_location, null=True, blank=True)
-    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
-    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-
-    def __unicode__(self):
-        return self.email
-
-    def get_absolute_url(self):
-        return reverse("joins:referral_link", kwargs={"email": self.email})
-
-    class Meta:
-        ordering = ["-timestamp"]
-
-    class Meta:
-        unique_together = ("email", "ref_id",)
-
-
 class Email(models.Model):
     email = models.EmailField(unique=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     def __unicode__(self):
         return self.email
-
-
 
 
 class t_user_attribute(models.Model):
@@ -73,5 +48,3 @@ class t_group(models.Model):
 
     def __unicode__(self):
         return 't_group {}'.format(self.id)
-
-
