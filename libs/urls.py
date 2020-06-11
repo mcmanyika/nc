@@ -3,8 +3,8 @@ from django.conf.urls import include, url
 from libs.views import *
 
 urlpatterns = [
-	
-	url(r'^base/', index, name='base'),
+
+    url(r'^home/', index, name='home'),
     url(r'^add-ad/', add_ads, name='add-ad'),
     url(r'^ad-detail/(?P<id>.*)$', ad_detail, name='ad-detail'),
     url(r'^list-by-category/(?P<id>.*)$', category, name='list-by-category'),
@@ -18,10 +18,10 @@ urlpatterns = [
     url(r'^base-d/', base_d, name='base-d'),
     url(r'^base-e/', base_e, name='base-e'),
     url(r'^base-f/', base_f, name='base-f'),
-    
-    
-    
 
-    
-    
+
+
+
+
+
 ]

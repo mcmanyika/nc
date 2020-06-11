@@ -88,9 +88,9 @@
         >&times;</a
       >
       <div class="Sideoverlay-content">
-        <a onclick="openArticle()">ADD ARTICLES</a>
-        <a onclick="openVideo()">ADD VIDEOS</a>
-        <a onclick="openEvent()">UPLOAD EVENTS</a>
+        <a style="cursor:pointer" onclick="openArticle()">ADD ARTICLES</a>
+        <a style="cursor:pointer"  onclick="openVideo()">ADD VIDEOS</a>
+        <a style="cursor:pointer"  onclick="openEvent()">UPLOAD EVENTS</a>
       </div>
     </div>
     <div id="main">
@@ -98,7 +98,7 @@
       class="container"
       style="color: #edede; font-size: 13px; padding: 100px 10px 0;"
     >
-      <a href="{% url 'base' %}">Home <<</a>
+      <a href="{% url 'home' %}">Home <<</a>
     </div>
     {% endblock %}
 

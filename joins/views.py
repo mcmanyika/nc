@@ -53,7 +53,7 @@ def register_view(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/dash/')
+                return HttpResponseRedirect('/dashboard/')
             else:
                 messages.success(request, "Enter correct username or password")
 
