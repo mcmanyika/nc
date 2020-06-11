@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 from libs.views import *
-from joins.views import logout
+# from joins.views import logout
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'blog/', include('blog.urls')),
     url(r'donate/', donate, name='donate'),
     url(r'libs/', include('libs.urls')),
-    url(r'login/', include('joins.urls')),
+    # url(r'login/', include('joins.urls')),
     url(r'^', landing, name='landing'),
 
 ]
