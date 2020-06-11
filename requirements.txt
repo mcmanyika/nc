@@ -60,7 +60,7 @@ odfpy==1.4.1
 odict==1.7.0
 openpyxl==2.6.4
 optional-django==0.1.0
-pandas==1.0.3
+# pandas==1.0.3
 # pandocfilters==1.4.2
 # parso==0.6.2
 # pep8==1.7.1
