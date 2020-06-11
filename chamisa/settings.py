@@ -28,7 +28,7 @@ if DEBUG:
     ALLOWED_HOSTS = []
 else:
     ALLOWED_HOSTS = ['142.93.201.175',
-                 'www.nelsonchamisa.online', 'nelsonchamisa.online']
+                     'www.nelsonchamisa.online', 'nelsonchamisa.online']
 
 
 # Application definition
@@ -86,24 +86,24 @@ WSGI_APPLICATION = 'chamisa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+# if DEBUG:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'bigboy',
-            'USER': 'bigboy',
-            'PASSWORD': 'focus@1',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
+}
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'bigboy',
+#             'USER': 'bigboy',
+#             'PASSWORD': 'focus@1',
+#             'HOST': 'localhost',
+#             'PORT': '',
+#         }
+#     }
 
 
 # Password validation
