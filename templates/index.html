@@ -175,11 +175,6 @@
         {% for rw in news %} {% if rw.category == 'issues' %}
         <article class="post">
           <header>
-            <div class="header-meta">
-              <span class="posted-on"
-                ><strong>Dated</strong> : {{rw.timestamp|date:"M-d-Y"}}</span
-              >
-            </div>
             <h2 class="entry-title">
               <a href="{% url 'article-detail' rw.id %}" title="article"
                 >{{rw.header}}</a
