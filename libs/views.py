@@ -72,8 +72,14 @@ def add_ads(request):
 
 
 def dash(request):
+    events = t_event.objects.count()
+    videos = t_video.objects.count()
+    issues = t_issue.objects.filter(category="issues").count()
 
     context = {
+        "events": events,
+        "videos": videos,
+        "issues": issues
 
     }
 

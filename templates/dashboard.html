@@ -1,5 +1,32 @@
 {% extends 'baseBlank.html' %} {% load static %} {% block content %}
-<h1>&nbsp;</h1>
+<h3>&nbsp;</h3>
+
+<div class="col-md-4">
+  <div class="card bg-primary text-white">
+    <div class="card-body">
+      <h4>Total Articles</h4>
+      <h3>{{issues}}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card bg-success text-white">
+    <div class="card-body">
+      <h4>Total Videos</h4>
+      <h3>{{videos}}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card bg-primary text-white">
+    <div class="card-body">
+      <h4>Total Events</h4>
+      <h3>{{events}}</h3>
+    </div>
+  </div>
+</div>
 
 <div id="add_article" class="overlay">
   <div class="row">
