@@ -22,7 +22,7 @@ from joins.views import logout
 urlpatterns = [
     url(r'admin/', admin.site.urls),
 
-    url(r'dashboard/', dash, name='dash'),
+    url(r'dashboard/', dash, name='dashboard'),
 
 
 

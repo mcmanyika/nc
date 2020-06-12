@@ -53,7 +53,9 @@
             <li><a href="#section-news">News</a></li>
             <li><a href="{% url 'videos' %}">Videos</a></li>
             <li>
-              <a href="https://payments.mdcparty.org/#/donations" target="_blank"
+              <a
+                href="https://payments.mdcparty.org/#/donations"
+                target="_blank"
                 ><strong class="text-danger">Donate</strong></a
               >
             </li>
@@ -63,12 +65,7 @@
 
         <div class="paid-for">
           <p class="no-margin">
-            {% if user.is_superuser %}<a href="{% url 'dash' %}"
-              >PAID FOR BY TEAM CHAMISA</a
-            >
-            {% else %}
             <a href="">PAID FOR BY TEAM CHAMISA NOW </a>
-            {% endif %}
           </p>
         </div>
 
