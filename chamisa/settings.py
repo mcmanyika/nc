@@ -24,12 +24,12 @@ SECRET_KEY = 'xf)kpm507f9-p82(a+anzbvagb89g(5q#r-7wyoo0a6bknab0c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-if DEBUG:
-    ALLOWED_HOSTS = []
-else:
+# if DEBUG:
+#     ALLOWED_HOSTS = []
+# else:
 
-    ALLOWED_HOSTS = ['www.nelsonchamisa.online',
-                     'nelsonchamisa.online', '142.93.201.175']
+ALLOWED_HOSTS = ['www.nelsonchamisa.online',
+                 'nelsonchamisa.online', '142.93.201.175']
 
 
 # Application definition
