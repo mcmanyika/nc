@@ -22,14 +22,14 @@ from joins.views import logout
 urlpatterns = [
     url(r'admin/', admin.site.urls),
 
-    url(r'dashboard/', dash, name='dashboard'),
-
+    url(r'accounts/profile/', dash, name='dashboard'),
+    url('^accounts/', include('allauth.urls')),
 
 
     url(r'blog/', include('blog.urls')),
     url(r'donate/', donate, name='donate'),
     url(r'libs/', include('libs.urls')),
-    url(r'login/', include('joins.urls')),
+    # url(r'login/', include('joins.urls')),
     url(r'^', landing, name='landing'),
 
 ]

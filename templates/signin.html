@@ -15,70 +15,27 @@
       href="{% static 'assets/css/bootstrap.min.css'%}"
       media="screen"
     />
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <style>
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+</style>
   </head>
 
-  <body class="login">
-    <div id="login">
-      <h1>
-        Chamisa Now!
-      </h1>
-      <br />
-      <form id="login-form" class="form" method="POST" action="">
-        {% csrf_token %}
-        <p>
-          <label for="username"
-            >Username<br />
-            <input
-              type="text"
-              name="username"
-              id="username"
-              class="input"
-              value=""
-              size="20"
-          /></label>
-        </p>
-        <p>
-          <label for="password"
-            >Password<br />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="input"
-              value=""
-              size="20"
-          /></label>
-        </p>
-        <p class="forgetmenot">
-          <label for="rememberme"
-            ><input
-              name="rememberme"
-              type="checkbox"
-              id="rememberme"
-              value="forever"
-            />
-            Remember Me</label
-          >
-        </p>
-        <p class="submit">
-          <input
-            type="submit"
-            name="submit"
-            id="submit"
-            class="button button-primary button-large"
-            value="Log In"
-          />
-        </p>
-      </form>
+  <body>
+      <div class="container">
+    <div class="vertical-center">
+    
+    {% block content %}
+     
+      {% endblock %}
+    </div>
     </div>
     <!-- /login -->
-
-    <script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
-    <script src="{% static 'assets/js/login.js' %}"></script>
   </body>
 </html>
