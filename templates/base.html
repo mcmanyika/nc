@@ -168,7 +168,7 @@
       >
       <div class="overlay-content">
         {% if user.is_superuser %}<a href="{% url 'dashboard' %}">Dashboard</a>
-        {%else%}{%endif%}
+        {%else%}<a href="{% url 'login' %}">Login</a>{%endif%}
         <a href="https://www.mdcparty.org" target="_blank">Party Platform</a>
         <a href="https://www.mdcparty.org/news/" target="_blank">News</a>
         <a href="#footer">Subscribe</a>

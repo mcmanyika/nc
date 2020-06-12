@@ -103,7 +103,7 @@ def register(request):
 
 def logout(request):
     logout(request)
-    return HttpResponseRedirect('/libs/base/')
+    return HttpResponseRedirect('/')
 
 
 def signup(request):

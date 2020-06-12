@@ -13,12 +13,6 @@ urlpatterns = [
 
     url(r'^videos/', video, name='videos'),
     url(r'^issues/', issues, name='issues'),
-    url(r'^base-b/', base_b, name='base-b'),
-    url(r'^base-c/', base_c, name='base-c'),
-    url(r'^base-d/', base_d, name='base-d'),
-    url(r'^base-e/', base_e, name='base-e'),
-    url(r'^base-f/', base_f, name='base-f'),
-
 
 
 
