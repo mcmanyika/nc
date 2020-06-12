@@ -25,7 +25,7 @@ SECRET_KEY = 'xf)kpm507f9-p82(a+anzbvagb89g(5q#r-7wyoo0a6bknab0c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['142.93.201.175',
+ALLOWED_HOSTS = ['142.93.201.175', '127.0.0.1',
                  'www.nelsonchamisa.online', 'nelsonchamisa.online']
 
 
@@ -152,6 +152,6 @@ MEDIA_URL = '/img/'
 
 CORS_ORIGIN_WHITELIST = [
     "http://nelsonchamisa.online",
-    "http://www.nelsonchamisa.online"
+    "http://www.nelsonchamisa.online",
     "http://142.93.201.175"
 ]
