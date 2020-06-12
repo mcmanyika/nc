@@ -28,8 +28,8 @@ DEBUG = False
 #     ALLOWED_HOSTS = []
 # else:
 
-ALLOWED_HOSTS = ['www.nelsonchamisa.online',
-                 'nelsonchamisa.online', '142.93.201.175']
+ALLOWED_HOSTS = ['142.93.201.175', 'www.nelsonchamisa.online',
+                 'nelsonchamisa.online']
 
 
 # Application definition
