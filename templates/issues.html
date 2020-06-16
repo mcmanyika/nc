@@ -35,7 +35,7 @@
     <div
       id="header"
       class="header-bg header-nav-bottom"
-      style="background-image: url({% static 'img/landing.jpg' %})"
+      style="background-image: url('/static/img/landing.jpg');"
     >
       <!-- page header -->
       <div class="header-bg-wrapper">
@@ -70,7 +70,9 @@
             <div class="container-fluid">
               <div class="collapse navbar-collapse" id="navbar-main">
                 <ul class="nav navbar-nav" id="nav-left">
-                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li>
+                    <a href="{% url 'home' %}">&#9776;</a>
+                  </li>
                   <li class="dropdown show-on-hover">
                     <a class="dropdown-toggle" data-toggle="dropdown" href=""
                       >About</a
@@ -81,20 +83,26 @@
                     </ul>
                   </li>
 
-                  <li><a href="{% url 'home' %}">Issues</a></li>
+                  <li><a href="{% url 'issues' %}">Issues</a></li>
 
-                  <li class="dropdown show-on-hover">
+                  <!-- <li class="dropdown show-on-hover">
                     <a class="dropdown-toggle" data-toggle="dropdown" href=""
                       >Deliver Change</a
                     >
                     <ul class="dropdown-menu">
                       <li><a href="">Make A Call</a></li>
                     </ul>
-                  </li>
+                  </li> -->
                 </ul>
+
                 <ul class="nav navbar-nav" id="nav-right">
                   <li>
-                    <a href="{% url 'donate' %}"  style="color: #fff !important;">Donate</a>
+                    <a
+                      href="https://payments.mdcallianceparty.org/#/donations"
+                      target="_blank"
+                      style="color: #fff !important;"
+                      >Donate</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -139,7 +147,6 @@
             <hr class="sep" />
           </article>
           {% endif %} {% endfor %}
-
         </div>
         <!-- end column -->
 
