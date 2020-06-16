@@ -1,12 +1,14 @@
 {% extends "mainBase.html" %} {% load static %} {% block content %}
+<h1>&nbsp;</h1>
 <header class="page-header">
   <h1 class="page-title">{{header}}</h1>
-  <div class="header-meta">
+  <!-- <div class="header-meta">
     <span class="posted-on">{{date}}</span>
-  </div>
+  </div> -->
 </header>
 
 <div class="entry-content">
+  {% if image %}
   <p class="entry-thumbnail">
     <img
       src="{% static 'img/' %}{{image}}"
@@ -15,6 +17,7 @@
       style="width: 420px;"
     />
   </p>
+  {% else %} {%endif %}
 
   <p>
     {{description | safe }}
