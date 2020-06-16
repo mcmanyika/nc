@@ -1,3 +1,4 @@
+from tinymce import TinyMCE
 from django import forms
 from django.core.files.images import get_image_dimensions
 from django.contrib.auth.forms import UserCreationForm
@@ -12,6 +13,11 @@ from blog.models import *
 User = get_user_model()
 
 
+class TinyMCEWidget(TinyMCE):
+    def use_required_attribute(self, *args):
+        return False
+
+
 class SubscribeForm(forms.ModelForm):
     class Meta:
         model = t_subscribe
@@ -22,6 +28,12 @@ class SubscribeForm(forms.ModelForm):
 
 
 class NewsForm(forms.ModelForm):
+    description = forms.CharField(
+        widget=TinyMCEWidget(
+            attrs={'required': False, 'cols': 30, 'rows': 10}
+        )
+    )
+
     class Meta:
         model = t_issue
         fields = [

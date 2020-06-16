@@ -183,7 +183,7 @@
           </header>
 
           <p>
-            {{rw.description|truncatechars:150 }}
+            {{rw.description | safe |truncatechars:150 }}
             <br />
             <a href="{% url 'article-detail' rw.id %}" class="more-link"
               >Continue reading</a

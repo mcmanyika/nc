@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'accounts/profile/', dash, name='dashboard'),
     url('^accounts/', include('allauth.urls')),
 
+    path('tinymce/', include('tinymce.urls')),
 
     url(r'blog/', include('blog.urls')),
     url(r'donate/', donate, name='donate'),

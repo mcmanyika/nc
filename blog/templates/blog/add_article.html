@@ -10,14 +10,7 @@
       value=""
       placeholder="Heading"
     /><br />
-    <textarea
-      name="description"
-      class="form-control"
-      rows="7"
-      cols="30"
-      placeholder="Description"
-    ></textarea
-    ><br />
+    {{form.description}} <br />
 
     <select name="category" class="form-control">
       {% for rw in dictionary %}

@@ -92,13 +92,22 @@
         >&times;</a
       >
       <div class="Sideoverlay-content">
+        {% if user.is_superuser %}
         <a style="cursor:pointer" onclick="openArticle()">Add Articles</a>
         <a style="cursor:pointer"  onclick="openVideo()">Add Videos</a>
         <a style="cursor:pointer"  onclick="openEvent()">Upload Events</a>
 
-        {% if user.is_superuser %}<a href="/accounts/logout/">Logout</a
-          >{%endif%}
-      </div>
+        <a href="/accounts/logout/">Logout</a
+          >
+      
+      {% else %}
+      <a href="/accounts/login/">Login</a>
+      <a href="https://www.mdcallianceparty.org/" target="_blank">Party Platform</a>
+      <a href="https://www.mdcallianceparty.org/news/" target="_blank">News</a>
+      <a href="#footer">Subscribe</a>
+      <a href="#footer" style="color: #ba1c24;">GET Involved</a>
+      {%endif%}
+    </div>
     </div>
     <div id="main">
     <div

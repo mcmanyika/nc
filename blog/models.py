@@ -6,6 +6,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django import forms
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ def upload_location(instance, filename):
 
 class t_issue(models.Model):
     header = models.CharField(max_length=100)
-    description = models.TextField(default='')
+    description = HTMLField()
     category = models.CharField(max_length=25, default='policy')
     img = models.FileField(upload_to=upload_location, null=True, blank=True)
     status = models.CharField(max_length=10, default='Active')
