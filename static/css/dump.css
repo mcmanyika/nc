@@ -194,3 +194,13 @@ body {
     right: 35px;
   }
 }
+
+.hd {
+  width: 100px;
+  height: 30px;
+  background: red;
+  transition: width 2s;
+}
+.hd:hover {
+  width: 300px;
+}

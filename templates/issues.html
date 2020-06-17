@@ -28,6 +28,15 @@
       .navbar-default .navbar-nav > li > a {
         color: #ba1c24;
       }
+      .hd {
+        width: 0px;
+        /* height: 30px; */
+        background: red;
+        transition: width 0.8s;
+      }
+      .hd:hover {
+        width: 10px;
+      }
     </style>
   </head>
 
@@ -143,7 +152,6 @@
                 >Continue reading</a
               >
             </p>
-
             <hr class="sep" />
           </article>
           {% endif %} {% endfor %}
