@@ -16,8 +16,7 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from django.db.models import Count
 from django.contrib.auth.decorators import login_required
-from blog.forms import *
-from siteInfo.models import *
+from blog.models import *
 
 
 # Create your views here.
@@ -30,92 +29,20 @@ def dictfetchall(cursor):
     ]
 
 
-def add_article(request):
-    dictionary = t_dictionary.objects.all()
+
+def index(request):
+    events = t_event.objects.all().order_by('-id')[:3]
+    videos = t_video.objects.all().order_by('-id')[:3]
+    news = t_issue.objects.all().order_by('-id')[:3]
 
 
-    form = NewsForm(request.POST or None, request.FILES or None,)
-
-    if form.is_valid():
-        f = form.save(commit=False)
-        f.save()
-        messages.success(request, "Saved")
-        return HttpResponseRedirect('/blog/upload-successful/')
-    
     context = {
-    	'form' : form,
-        'dictionary' : dictionary,
-        
-    }    
+        "videos": videos,
+        "events": events,
+        "news": news,
 
-    template = "blog/add_article.html"    
+    }
+
+    template = "videos.html"
 
     return render(request, template, context)
-
-def article_detail(request, id):
-    instance = get_object_or_404(t_issue, id=id)
-    
-    context = {
-    "header" : instance.header,
-    "description" : instance.description,
-    "image" : instance.img,
-    "category" : instance.category,
-    "date" : instance.timestamp,
-        
-    }    
-
-    template = "blog/article_detail.html"    
-
-    return render(request, template, context)
-
-def add_video(request):
-
-
-    form = VideoForm(request.POST or None, request.FILES or None,)
-
-    if form.is_valid():
-        f = form.save(commit=False)
-        f.save()
-        messages.success(request, "Saved")
-        return HttpResponseRedirect('/blog/upload-successful/')
-    
-    context = {
-        'form' : form,
-        
-    }    
-
-    template = "blog/add_video.html"    
-
-    return render(request, template, context)
-
-def add_event(request):
-
-
-    form = EventForm(request.POST or None, request.FILES or None,)
-
-    if form.is_valid():
-        f = form.save(commit=False)
-        f.save()
-        messages.success(request, "Saved")
-        return HttpResponseRedirect('/blog/upload-successful/')
-    
-    context = {
-        'form' : form,
-        
-    }    
-
-    template = "blog/add_event.html"    
-
-    return render(request, template, context)
-
-
-
-
-def upload_successful(request):
-    
-    context = {
-    }    
-
-    template = "blog/upload_successful.html"    
-
-    return render(request, template, context)    

@@ -1,0 +1,59 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+{% include 'head.html' %}
+<div id="section-videos" class="wrapper video-list">
+    <div class="container">
+      <h2>&nbsp;</h2>
+  
+      <div class="row">
+        <div class="col-md-12">
+          <div class="video-wrapper">
+            <div class="close-button">
+              <i class="fa fa-times close-icon"></i>
+            </div>
+            <div id="player_container" class="video-container">
+              {% for rw in videos %}
+              <div class="video-element video-element-{{rw.url}}">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/{{rw.url}}"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        {% for rw in videos %}
+        <div class="col-md-4 col-sm-6">
+          <!-- Use YouTube Video ID for 'thumb-######' and data-video-index -->
+          <div
+            class="video-thumbnail"
+            id="thumb-{{rw.url}}"
+            data-video-index="{{rw.url}}"
+            style="background-image: url('{% static 'img/' %}{{rw.thumbnail}}');"
+          >
+            <i class="fa fa-play-circle"></i>
+            <div class="overlay"></div>
+          </div>
+        </div>
+        {% endfor %}
+  
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- end section-videos -->
+
+  <script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
