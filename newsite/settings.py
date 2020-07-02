@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = []
 else:
@@ -47,7 +47,6 @@ WSGI_APPLICATION = 'newsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 
 
 # Password validation
