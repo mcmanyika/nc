@@ -1,13 +1,10 @@
-{% extends "base.html" %}
+{% extends "baseBlank.html" %}
 {% load cms_tags %}
 
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
-    <div class="sidebar">
-        {% placeholder "sidebar" %}
-    </div>
-    <div class="content">
+    <div class="container">
         {% placeholder "content" %}
     </div>
 {% endblock content %}

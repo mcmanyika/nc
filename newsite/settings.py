@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 if DEBUG:
     ALLOWED_HOSTS = []
 else:
@@ -112,7 +112,8 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'sekizai.context_processors.sekizai',
                 'django.template.context_processors.static',
-                'cms.context_processors.cms_settings'
+                'cms.context_processors.cms_settings',
+                'aldryn_snake.template_api.template_processor'
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
@@ -180,6 +181,29 @@ INSTALLED_APPS = [
     'djangocms_video',
     'newsite',
     'blog',
+
+    'aldryn_apphooks_config',
+    'aldryn_categories',
+    'aldryn_common',
+    'aldryn_newsblog',
+    'aldryn_people',
+    'aldryn_translation_tools',
+
+    'absolute',
+    'aldryn_forms',
+    'aldryn_forms.contrib.email_notifications',
+    'captcha',
+    'emailit',
+
+    'aldryn_boilerplates',
+
+    'parler',
+    'taggit',
+    'taggit_autosuggest',
+    'meta',
+    'sortedm2m',
+    'djangocms_blog',
+    'aldryn_search',
 ]
 
 LANGUAGES = (
@@ -248,5 +272,26 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters'
+    'easy_thumbnails.processors.filters',
+
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.background',
 )
+
+BLOG_AVAILABLE_PERMALINK_STYLES = (
+    ('full_date', ('Full date')),
+    ('short_date', ('Year /  Month')),
+    ('category', ('Category')),
+)
+BLOG_PERMALINK_URLS = {
+    'full_date': r'^(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<day>\d{1,2})/(?P<slug>\w[-\w]*)/$',
+    'short_date': r'^(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<slug>\w[-\w]*)/$',
+    'category': r'^(?P<category>\w[-\w]*)/(?P<slug>\w[-\w]*)/$',
+}
+
+META_SITE_PROTOCOL = 'http'
+META_USE_SITES = True
+
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+META_USE_GOOGLEPLUS_PROPERTIES = True
