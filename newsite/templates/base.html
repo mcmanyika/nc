@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>{% block title %}This is my new project home page{% endblock title %}</title>
+    <title>{% block title %}Nelson Chamisa{% endblock title %}</title>
     {% include 'head.html' %}
     
     {% render_block "css" %}
@@ -18,18 +18,7 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
       >&times;</a
     >
-    <div class="overlay-content">
-      <a href="">About Nelson</a>
-      
-      <a href="https://www.mdcallianceparty.org/news/" target="_blank"
-        >News</a
-      >
-      <a href="https://www.mdcallianceparty.org/" target="_blank"
-        >Party Platform</a
-      >
-      <a href="#footer">Subscribe</a>
-      <a href="#footer" style="color: #ba1c24;">GET Involved</a>
-    </div>
+    {% include 'leftMenu.html' %}
   </div>
       <!-- page header -->
         <div id="main">
@@ -52,54 +41,7 @@
     </div>
     
 
-   
-
-  <script>
-    function openNav() {
-      document.getElementById("LeftBar").style.width = "28%";
-      document.getElementById("main").style.marginLeft = "28%";
-    }
-
-    function closeNav() {
-      document.getElementById("LeftBar").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-    }
-  </script>
-  <script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
-  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
-  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'assets/js/custom.js' %}"></script>
-  <script src="https://www.youtube.com/iframe_api"></script>
-
-  <script>
-    $(document).ready(function () {
-      // Add smooth scrolling to all links
-      $("a").on("click", function (event) {
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-
-          // Store hash
-          var hash = this.hash;
-
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          $("html, body").animate(
-            {
-              scrollTop: $(hash).offset().top,
-            },
-            800,
-            function () {
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            }
-          );
-        } // End if
-      });
-    });
-  </script>
+ {% include 'scripts.html' %} 
 {% render_block "js" %}
 </body>
 </html>

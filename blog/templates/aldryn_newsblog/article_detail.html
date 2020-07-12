@@ -1,5 +1,5 @@
 {% extends "aldryn_newsblog/base.html" %}
-{% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
+{% load i18n static thumbnail cms_tags apphooks_config_tags %}
 {% load apphooks_config_tags %}
 
 {% block title %}
@@ -8,7 +8,8 @@
 
 {% block header %}
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('{% if article.featured_image_id %}{% thumbnail article.featured_image 1200x400 crop subject_location=article.featured_image.subject_location %}{% else %}{% static 'img/post-bg.jpg' %}{% endif %}')">
+<header class="masthead" style="background-image: url('{% if article.featured_image_id %}{% thumbnail article.featured_image 1200x400 crop subject_location=article.featured_image.subject_location %}
+{% else %}{% static 'img/landing3.png' %}{% endif %}')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
