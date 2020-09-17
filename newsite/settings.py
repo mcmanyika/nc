@@ -30,7 +30,8 @@ SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 if DEBUG:
-    ALLOWED_HOSTS = ['165.22.17.129']
+    ALLOWED_HOSTS = ['165.22.17.129', 'www.nelsonchamisa.online',
+                     'nelsonchamisa.online']
 else:
     ALLOWED_HOSTS = ['165.22.17.129', 'www.nelsonchamisa.online',
                      'nelsonchamisa.online']
