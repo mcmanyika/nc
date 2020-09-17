@@ -235,6 +235,7 @@ CMS_TEMPLATES = (
     ('newsletter.html', 'Landing Page'),
     ('fullwidth.html', 'Fullwidth'),
     ('blank.html', 'Blank'),
+    ('coming.html', 'Coming Soon'),
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'

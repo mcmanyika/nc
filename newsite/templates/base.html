@@ -1,18 +1,16 @@
 {% load cms_tags menu_tags sekizai_tags static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
     <title>{% block title %}Nelson Chamisa{% endblock title %}</title>
-    {% include 'head.html' %}
-    
-    {% render_block "css" %}
-    {{ ALDRNYN_SNAKE.render_head }}
-
-    {% if request.toolbar %}
+    {% include 'head.html' %} {% render_block "css" %} {{ ALDRNYN_SNAKE.render_head }} {% if request.toolbar %}
     <style>
       .cms-toolbar-expanded .navbar-custom {
         margin-top: 100px;
@@ -23,38 +21,26 @@
   <body>
     {% cms_toolbar %}
 
-  <div id="LeftBar" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-      >&times;</a
-    >
-    {% include 'leftMenu.html' %}
-  </div>
-      <!-- page header -->
-        <div id="main">
-            <div id="header"
-                  class="header-bg header-large header-nav-top offset-bottom"
-                  style="background-image: url('/static/assets/images/landing3.jpg');"
-                >
-                {% include 'index.html' %}
-                <div class="header-bg-wrapper">
-                    {% include 'menubar.html' %} 
-                   
-                </div>
+    <div id="LeftBar" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      {% include 'leftMenu.html' %}
+    </div>
+    <!-- page header -->
+    <div id="main">
+      <div
+        id="header"
+        class="header-bg header-large header-nav-top offset-bottom"
+        style="background-image: url('/static/assets/images/landing3.jpg')"
+      >
+        {% include 'index.html' %}
+        <div class="header-bg-wrapper">{% include 'menubar.html' %}</div>
         <!-- end header-top -->
       </div>
-      <div class="col-12">
-      {% block content %} {% endblock %} 
+        <div class="col-12">{% block content %} {% endblock %}</div>
+       
       </div>
-      <div>
-      </div>
-
-      <div style="margin-top: 180px">
-      {% include 'footerbar.html' %}
-    </div>
-    </div>
-    
-
- {% include 'scripts.html' %} 
-{% render_block "js" %}
-</body>
+    {% include 'scripts.html' %} {% render_block "js" %}
+  </body>
 </html>
