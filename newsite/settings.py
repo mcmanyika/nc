@@ -32,7 +32,7 @@ DEBUG = True
 if DEBUG:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ['46.101.184.81', 'www.nelsonchamisa.online',
+    ALLOWED_HOSTS = ['165.22.17.129', 'www.nelsonchamisa.online',
                      'nelsonchamisa.online']
 
 
